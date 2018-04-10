@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
 
 
 	public static Player instance;
+	public int hitpoints = 10;
 
 	// Use this for initialization
 	void Awake () {
@@ -25,9 +26,23 @@ public class Player : MonoBehaviour {
 	/// <summary>
 	/// Destroy the player
 	/// </summary>
+	public void Injure ()
+	{
+		hitpoints--; 
+		print (hitpoints);
+		// Need some kind of blinking animation and sound here
+		if (hitpoints == 0) {
+			Die ();
+		}
+	}
+
+	/// <summary>
+	/// Destroy the player
+	/// </summary>
 	public void Die ()
 	{
 		Invoke ("Remove" , 1);
+		// Need some kind of death animation and sound here
 		// Restart game here
 	}
 
