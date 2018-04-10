@@ -22,7 +22,20 @@ public class Player : MonoBehaviour {
 		
 	}
 
-	void Die (){
-	
+	/// <summary>
+	/// Destroy the player
+	/// </summary>
+	public void Die ()
+	{
+		Invoke ("Remove" , 1);
+		// Restart game here
 	}
+
+	/// <summary>
+	/// Remove the player.
+	/// </summary>
+	public void Remove (){
+		Destroy (gameObject);
+	}
+
 }
