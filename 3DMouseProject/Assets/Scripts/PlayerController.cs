@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
 	[Header ("Jumping")]
 	public float jumpForce = 5f;
-	private Collider coll;
+	public Collider coll;
 
 
 	[Header ("Shooting")]
@@ -29,14 +29,15 @@ public class PlayerController : MonoBehaviour {
 	[Header ("Others")]
 	public float speed = 2f;
 	private Rigidbody rb;
-	// private float gravity = 5f;
-	// public Quaternion targetRotation;
+	public float mouseSensitivity;
+	Vector3 middleOfScreen;
+
 
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
 		coll = GetComponent<Collider> ();
-		 
+
 	}
 
 	// Q: Chracter Controller or Rigidbody?
@@ -46,28 +47,12 @@ public class PlayerController : MonoBehaviour {
 		moveFB = Input.GetAxisRaw ("Vertical");
 		rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
 
-
 	}
 
 	// Update is called once per frame
 	void Update () {
-		
-		// Get the Screen positions of the player
-		// Vector3 playerOnScreen = Camera.main.WorldToViewportPoint (transform.position);
-
-		// Get the Screen position of the mouse
-		/*
-		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		mousePos.y = 0;
-		// Get the angle between the points
-		float angle = AngleBetweenTwoPoints(transform.position, mousePos);
-
-		// Rotate the player where the mouse is pointing at
-
-		transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle));
-		//transform.rotation = Quaternion.AngleAxis (angle, Vector3.up);
-
-		*/
+		// Get the vector the screen center 
+		middleOfScreen = new Vector3(Screen.width/2, Screen.height/2, 0f);
 
 		if (Input.GetButtonDown ("Jump") && Grounded()) {
 			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
@@ -79,18 +64,25 @@ public class PlayerController : MonoBehaviour {
 			lastTimeFired = Time.time;
 			// Fire();
 		}
-	}
 
-	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
-		return Mathf.Atan2(a.z - b.z, a.x - b.x) * Mathf.Rad2Deg - 90;
-	}
+		// Set the direction where the player should face
+		Vector3 direction = Input.mousePosition - middleOfScreen;
+		// Flip to the correct orientation
+		Vector3 new_direction = new Vector3(direction.x, 0f, direction.y);
+		// transform.LookAt(flipped);
+		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (new_direction), mouseSensitivity * Time.deltaTime);
 
+	}
+		
 	// Look below the character and see if there is a collider
 	bool Grounded () {
 		return Physics.Raycast (transform.position, Vector3.down, coll.bounds.extents.y + 0.1f);
 	}
 
-
+	// Pooping
+	void Fire () {
+		
+	}
 
 
 }
