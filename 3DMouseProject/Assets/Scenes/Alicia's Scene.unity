@@ -217,8 +217,10 @@ MonoBehaviour:
   moveFB: 0
   inputFire: 0
   jumpForce: 5
+  coll: {fileID: 0}
   rateOfFire: 2
   speed: 10
+  mouseSensitivity: 0
 --- !u!114 &159754562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec06b75cb6b6d41b2962b4a90e6f6009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: 10
 --- !u!65 &159754563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -332,13 +335,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 469686946}
-  m_LocalRotation: {x: 0.4452157, y: -0.23523022, z: 0.1224531, w: 0.85525143}
-  m_LocalPosition: {x: 3.49, y: 10, z: -4.96}
+  m_LocalRotation: {x: 0.465389, y: -0.23225763, z: 0.12800162, w: 0.8444436}
+  m_LocalPosition: {x: 4.3, y: 14.13, z: -4.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 55, y: -30.757002, z: 0}
+  m_LocalEulerAnglesHint: {x: 57.72, y: -30.757002, z: 0}
 --- !u!114 &469686951
 MonoBehaviour:
   m_ObjectHideFlags: 0

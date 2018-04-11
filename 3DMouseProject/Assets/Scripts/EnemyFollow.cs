@@ -11,6 +11,10 @@ public class EnemyFollow : MonoBehaviour
 	int attackDist = 3;
 	int MinDist = 2;
 
+	// Lives for enemy
+	public int hitpoints = 3;
+
+
 	void Start()
 	{
 		
@@ -31,5 +35,21 @@ public class EnemyFollow : MonoBehaviour
 			}
 
 		}
+
 	}
+		
+	public void Hurt ()
+	{
+		hitpoints--; 
+		// print (hitpoints);
+		// Need some kind of blinking animation and sound here
+		if (hitpoints == 0) {
+			Die ();
+		}
+	}
+
+	public void Die () {
+		Destroy (gameObject);
+	}
+
 }

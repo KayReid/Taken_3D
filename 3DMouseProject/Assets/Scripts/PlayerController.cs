@@ -20,21 +20,18 @@ public class PlayerController : MonoBehaviour {
 	public Collider coll;
 
 
-	[Header ("Shooting")]
-	[Tooltip("How fast is the player shooting")]
-	public float rateOfFire = 2;
-	private float lastTimeFired = 0;
-
-
 	[Header ("Others")]
 	public float speed = 2f;
 	private Rigidbody rb;
 	public float mouseSensitivity;
 	Vector3 middleOfScreen;
+	public Vector3 facing;
 
+	public static PlayerController instance;
 
 	// Use this for initialization
 	void Start () {
+		instance = this;
 		rb = GetComponent<Rigidbody> ();
 		coll = GetComponent<Collider> ();
 
@@ -53,36 +50,36 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		// Get the vector the screen center 
 		middleOfScreen = new Vector3(Screen.width/2, Screen.height/2, 0f);
+		inputFire = Input.GetMouseButton (0);
 
 		if (Input.GetButtonDown ("Jump") && Grounded()) {
 			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
 			rb.AddForce(Vector3.up * Mathf.Sqrt(jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
 
 		}
-		if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time)
-		{
-			lastTimeFired = Time.time;
-			// Fire();
-		}
 
+		// Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		// Debug.Log ("Mouse Position: " + mousePos);
 		// Set the direction where the player should face
 		Vector3 direction = Input.mousePosition - middleOfScreen;
+		// Vector3 direction = Input.mousePosition;
+		// Vector3 direction = mousePos - middleOfScreen;
+		// Vector3 direction = Input.mousePosition - transform.position;
+
+		// Vector3 direction = Input.mousePosition - transform.position;
 		// Flip to the correct orientation
-		Vector3 new_direction = new Vector3(direction.x, 0f, direction.y);
-		// transform.LookAt(flipped);
-		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (new_direction), mouseSensitivity * Time.deltaTime);
+		facing = new Vector3(direction.x, 0f, direction.y);
+		Debug.Log ("Facing: " + facing);
+		// transform.LookAt(facing);
+		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (facing), mouseSensitivity * Time.deltaTime);
 
 	}
 		
-	// Look below the character and see if there is a collider
+	/// <summary>
+	/// Helper function to check whether the player is grounded
+	/// </summary>
 	bool Grounded () {
 		return Physics.Raycast (transform.position, Vector3.down, coll.bounds.extents.y + 0.1f);
 	}
-
-	// Pooping
-	void Fire () {
-		
-	}
-
 
 }
