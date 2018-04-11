@@ -19,7 +19,4 @@ public class Canon : MonoBehaviour{
         }
     }
 
-    public override void collect() {
-        throw new System.NotImplementedException();
-    }
 }
