@@ -10,7 +10,6 @@ public class EnemyFollow : MonoBehaviour
 	int MaxDist = 10;
 	int attackDist = 3;
 	int MinDist = 2;
-	float lastHitTime = 0;
 
 	// Lives for enemy
 	public int hitpoints = 3;
@@ -30,10 +29,9 @@ public class EnemyFollow : MonoBehaviour
 				transform.position += transform.forward * MoveSpeed * Time.deltaTime;
 			}
 
-			if (Vector3.Distance (transform.position, Player.instance.transform.position) <= attackDist && Time.time >= lastHitTime + 3) {
+			if (Vector3.Distance (transform.position, Player.instance.transform.position) <= attackDist) {
 				// Call enemy attack instead of die
 				Player.instance.Injure ();
-				lastHitTime = Time.time;
 			}
 
 		}

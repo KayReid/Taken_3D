@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
 
 	public static Player instance;
 	public int hitpoints = 10;
+	float lastHitTime = 0;
 
 	// Use this for initialization
 	void Awake () {
@@ -26,13 +27,15 @@ public class Player : MonoBehaviour {
 	/// <summary>
 	/// Destroy the player
 	/// </summary>
-	public void Injure ()
-	{
-		hitpoints--; 
-		print (hitpoints);
-		// Need some kind of blinking animation and sound here
-		if (hitpoints == 0) {
-			Die ();
+	public void Injure (){
+		if (Time.time >= lastHitTime + 3) {
+			hitpoints--; 
+			print (hitpoints);
+			// Need some kind of blinking animation and sound here
+			if (hitpoints == 0) {
+				Die ();
+			}
+			lastHitTime = Time.time;
 		}
 	}
 
