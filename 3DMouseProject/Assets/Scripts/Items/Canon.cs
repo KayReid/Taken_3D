@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : MonoBehaviour {
+public class Canon : MonoBehaviour{
     // public SpriteRenderer canonRenderer; // Canon's image
+    public static int canonCounter;
 
 	// Use this for initialization
 	void Start () {
