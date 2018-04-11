@@ -177,14 +177,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 159754556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa7ab19ef502c4affbffd45ad72e0dc2, type: 3}
+  m_Script: {fileID: 11500000, guid: f1d4098025dab497fb9538a5515b0387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
-  lifeTime: 0.5
-  direction: {x: 0, y: 0, z: 0}
-  shootSound: {fileID: 0}
-  range: 50
 --- !u!33 &159754559
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -219,11 +214,15 @@ MonoBehaviour:
   moveLR: 0
   moveFB: 0
   inputFire: 0
+  inputJump: 0
+  mousePos: {x: 0, y: 0, z: 0}
+  target: {x: 0, y: 0, z: 0}
+  cam: {fileID: 0}
+  mouseSensitivity: 7
   jumpForce: 5
   coll: {fileID: 0}
   speed: 5
-  mouseSensitivity: 7
-  facing: {x: 0, y: 0, z: 0}
+  range: 50
 --- !u!114 &159754562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,6 +273,7 @@ GameObject:
   - component: {fileID: 469686949}
   - component: {fileID: 469686948}
   - component: {fileID: 469686947}
+  - component: {fileID: 469686951}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -344,6 +344,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 39.786003, y: -30.757002, z: 0}
+--- !u!114 &469686951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469686946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400c51b3cafefcf4e84cf095f3ced4ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 159754560}
+  minSpeed: 5
 --- !u!1 &483241419
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +448,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 483241419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4acac58d70b44c16a50c6b0aa9ce737, type: 3}
   m_Name: 

@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Player script. Manages the health and interaction with enemies of the player.
 /// </summary>
-// [RequireComponent (typeof(PlatformerController))]
+[RequireComponent (typeof(PlayerController))]
 public class Player : MonoBehaviour {
 
 
