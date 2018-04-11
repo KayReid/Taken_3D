@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cheese : MonoBehaviour {
+public class Cheese : MonoBehaviour, Collectibles {
     int cheeseCounter; 
 
 	// Use this for initialization
