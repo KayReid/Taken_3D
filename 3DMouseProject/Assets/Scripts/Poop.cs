@@ -50,13 +50,12 @@ public class Poop : MonoBehaviour {
 		print ("shoot");
 		RaycastHit hit;
 		if (Physics.Raycast (Player.instance.transform.position, PlayerController.instance.facing, out hit, range)) {
-			print ("hit");
-			Debug.Log (hit.transform.name);
-
-			// Target target = hit.transform.GetComponent<Target> ();
-			//if (target != null) { // Only do this when found the component. 
-			//	target.damage();
-			//}
+			EnemyFollow target = hit.transform.GetComponent<EnemyFollow> ();
+			if (target != null) { // Only do this when found the component. 
+				print ("hit");
+				Debug.Log (hit.transform.name);
+				target.Hurt ();
+			}
 
 		}
 

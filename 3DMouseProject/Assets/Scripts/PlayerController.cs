@@ -59,13 +59,17 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		// Debug.Log ("Mouse Position: " + mousePos);
 		// Set the direction where the player should face
 		Vector3 direction = Input.mousePosition - middleOfScreen;
+		// Vector3 direction = Input.mousePosition;
 		// Vector3 direction = mousePos - middleOfScreen;
+		// Vector3 direction = Input.mousePosition - transform.position;
 
 		// Vector3 direction = Input.mousePosition - transform.position;
 		// Flip to the correct orientation
 		facing = new Vector3(direction.x, 0f, direction.y);
+		Debug.Log ("Facing: " + facing);
 		// transform.LookAt(facing);
 		transform.rotation = Quaternion.Lerp (transform.rotation, Quaternion.LookRotation (facing), mouseSensitivity * Time.deltaTime);
 
