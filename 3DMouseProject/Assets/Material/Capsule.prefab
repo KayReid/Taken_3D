@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114552822531417638}
   - component: {fileID: 65820856344369646}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: PlayerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,8 +129,10 @@ MonoBehaviour:
   moveFB: 0
   inputFire: 0
   jumpForce: 5
+  coll: {fileID: 0}
   rateOfFire: 2
   speed: 5
+  mouseSensitivity: 0
 --- !u!114 &114696501914365540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec06b75cb6b6d41b2962b4a90e6f6009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitpoints: 10
 --- !u!136 &136052975661869104
 CapsuleCollider:
   m_ObjectHideFlags: 1
