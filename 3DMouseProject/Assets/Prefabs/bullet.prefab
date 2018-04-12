@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
-  shitSpeed: 4
+  shitSpeed: 20

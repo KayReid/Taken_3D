@@ -51,13 +51,15 @@ public class PlayerController : MonoBehaviour {
 	// Movement and Jumping
 	void FixedUpdate () {
 		// Move left, right, back, and forth
+
 		rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
 
 		if (inputJump && Grounded()) {
 			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
 			rb.AddForce(Vector3.up * Mathf.Sqrt(jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
 
-		} 
+		}
+
 	}
 
 	// Shooting and rotating
