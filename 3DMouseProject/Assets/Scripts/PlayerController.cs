@@ -102,7 +102,6 @@ public class PlayerController : MonoBehaviour {
 
 	// Shoot the poop
 	void Shoot() {
-
 		/*
 		print ("shoot");
 		RaycastHit hit;
@@ -118,14 +117,8 @@ public class PlayerController : MonoBehaviour {
 		*/
 		// Instantiate the poop
 		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
-		// Correct the rotation
-		bullet.transform.Rotate (Vector3.left * 90);
-		// Retrieve the rigidbody component from the bullet
-		Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
-		// Make the bullet be pushed forward
-		bullet_rb.AddForce(transform.forward * Shitspeed);
+		bullet.transform.rotation = transform.rotation;
 
-		Destroy (bullet, 2f);
 
 	}
 
