@@ -26,10 +26,12 @@ public class PlayerController : MonoBehaviour {
 	public Collider coll;
 
 	[Header ("Shooting")]
+	public GameObject poopPrefab; // Prefab to be instantiated when pooping
 	public float rateOfFire = 2; // How fast is the player shooting
 	private float lastTimeFired = 0; // Last time when the player pooped
 	public float Shitspeed = 13; // How fast is the poop moving towards the mouse pointer
 	public float range = 50f; // How far the shooting can go
+	public Transform firePoint;
 
 	[Header ("Others")]
 	public float speed = 2f;
@@ -51,7 +53,6 @@ public class PlayerController : MonoBehaviour {
 		// Move left, right, back, and forth
 		rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
 
-		print (inputJump + " " + Grounded());
 		if (inputJump && Grounded()) {
 			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
 			rb.AddForce(Vector3.up * Mathf.Sqrt(jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
@@ -61,16 +62,17 @@ public class PlayerController : MonoBehaviour {
 
 	// Shooting and rotating
 	void Update () {
-		/*
+		
 		if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time)
 		{
 			lastTimeFired = Time.time;
-			// Fire();
+			Shoot ();
 		}
-		*/
+		/*
 		if (inputFire) {
 			Shoot ();
 		}
+		*/
 
 		Rotate ();
 	}
@@ -100,17 +102,30 @@ public class PlayerController : MonoBehaviour {
 
 	// Shoot the poop
 	void Shoot() {
+
+		/*
 		print ("shoot");
 		RaycastHit hit;
 		if (Physics.Raycast (Player.instance.transform.position, target, out hit, range)) {
-			EnemyFollow target = hit.transform.GetComponent<EnemyFollow> ();
-			if (target != null) { // Only do this when found the component. 
+			EnemyFollow enemy = hit.transform.GetComponent<EnemyFollow> ();
+			if (enemy != null) { // Only do this when found the component. 
 				print ("hit");
 				Debug.Log (hit.transform.name);
-				target.Hurt ();
+				enemy.Hurt ();
 			}
 
 		}
+		*/
+		// Instantiate the poop
+		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
+		// Correct the rotation
+		bullet.transform.Rotate (Vector3.left * 90);
+		// Retrieve the rigidbody component from the bullet
+		Rigidbody bullet_rb = bullet.GetComponent<Rigidbody>();
+		// Make the bullet be pushed forward
+		bullet_rb.AddForce(transform.forward * Shitspeed);
+
+		Destroy (bullet, 2f);
 
 	}
 
