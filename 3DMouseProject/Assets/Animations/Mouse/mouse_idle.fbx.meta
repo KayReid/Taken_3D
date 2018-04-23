@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b4757439954e14b4b817223179e65e77
-timeCreated: 1524483539
+timeCreated: 1524485709
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -2394,6 +2394,7 @@ ModelImporter:
     2100004: mouse_eyes
     4300000: mouse_idle.001
     7400000: mouse_idle|mouse_idleAction
+    7400002: mouse_idle|mouse_idle
     9500000: //RootNode
     13700000: mouse_idle.001
   externalObjects: {}
