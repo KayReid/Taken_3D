@@ -37,12 +37,15 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 2f;
 	private Rigidbody rb;
 
+	private Animator mouseAnimation;
+
 
 	// Use this for initialization
 	void Start () {
 		
 		rb = GetComponent<Rigidbody> ();
 		coll = GetComponent<Collider> ();
+		mouseAnimation = GetComponent<Animator> ();
 		cam = Camera.main;
 		inputFire = false;
 
@@ -58,6 +61,11 @@ public class PlayerController : MonoBehaviour {
 			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
 			rb.AddForce(Vector3.up * Mathf.Sqrt(jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
 
+		}
+		if (moveLR != 0 || moveFB != 0) {
+			mouseAnimation.SetBool("isWalking", true);
+		} else {
+			mouseAnimation.SetBool("isWalking", false);
 		}
 
 	}
@@ -75,7 +83,8 @@ public class PlayerController : MonoBehaviour {
 			Shoot ();
 		}
 		*/
-
+		mouseAnimation.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+		//mouseAnimation.SetFloat("Speed", Mathf.Abs(rb.velocity.y));
 		Rotate ();
 	}
 		
