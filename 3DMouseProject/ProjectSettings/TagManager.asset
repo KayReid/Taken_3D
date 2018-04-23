@@ -6,6 +6,8 @@ TagManager:
   tags:
   - enemy
   - Poop
+  - Glass
+  - Obstacle
   layers:
   - Default
   - TransparentFX
