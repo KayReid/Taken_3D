@@ -1,18 +1,16 @@
 fileFormatVersion: 2
-guid: 05d9d9caa961d4b64beb55798a02d33c
-timeCreated: 1524465446
+guid: 1bdf98500023343f3810a5ba2b94a0fc
+timeCreated: 1524472151
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: stand
+    2100000: wheel
     2300000: //RootNode
     3300000: //RootNode
-    4300000: cannon_parts_4
-    7400000: Default Take
-    9500000: //RootNode
+    4300000: cannon_parts_2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
