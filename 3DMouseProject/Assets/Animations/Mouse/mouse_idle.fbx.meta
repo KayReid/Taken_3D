@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b4757439954e14b4b817223179e65e77
-timeCreated: 1524475742
+timeCreated: 1524483539
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -2392,10 +2392,10 @@ ModelImporter:
     2100000: mouse_body
     2100002: m_ears&feeet&nose
     2100004: mouse_eyes
-    4300000: mouse_idle
-    7400000: mouse_idle.001|mouse_idleAction
+    4300000: mouse_idle.001
+    7400000: mouse_idle|mouse_idleAction
     9500000: //RootNode
-    13700000: mouse_idle
+    13700000: mouse_idle.001
   externalObjects: {}
   materials:
     importMaterials: 1
