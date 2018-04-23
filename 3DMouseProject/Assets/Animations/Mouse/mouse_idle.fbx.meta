@@ -2394,6 +2394,8 @@ ModelImporter:
     2100004: mouse_eyes
     4300000: mouse_walking.001
     7400000: mouse_idle|mouse_walkingAction
+    7400002: mouse_walking|mouse_walkingAction
+    7400004: mouse_walking|rigAction
     9500000: //RootNode
     13700000: mouse_walking.001
   externalObjects: {}
