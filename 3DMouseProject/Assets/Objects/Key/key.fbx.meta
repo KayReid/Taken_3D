@@ -1,20 +1,24 @@
 fileFormatVersion: 2
-guid: 342bc547a49734793965bb193809b270
-timeCreated: 1524465448
+guid: a5a085a0172ec4cf19bdc8c8bda6c297
+timeCreated: 1524472151
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: part1
-    2100002: stand
-    2100004: wheel
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: cannon_parts_1
-    7400000: Default Take
-    9500000: //RootNode
+    100000: Camera
+    100002: Circle
+    100004: //RootNode
+    100006: Lamp
+    400000: Camera
+    400002: Circle
+    400004: //RootNode
+    400006: Lamp
+    2000000: Camera
+    2100000: key
+    2300000: Circle
+    3300000: Circle
+    4300000: Circle
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -89,7 +93,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

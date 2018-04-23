@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ca99d29b4f16644bb820af366d32156a
-timeCreated: 1524465629
+guid: e22ba697a809f4d40b5c05e886e32ae2
+timeCreated: 1524472151
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,8 +11,6 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: cannon_parts_1
-    7400000: Default Take
-    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
