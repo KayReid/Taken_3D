@@ -42,10 +42,12 @@ public class Poop : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.collider.CompareTag("enemy"))
-		{
+		if (col.collider.CompareTag ("enemy")) {
 			print ("hit");
 			col.collider.GetComponent<EnemyFollow> ().Hurt ();
+			Destroy (gameObject);
+		} else {
+			print ("hit something else");
 			Destroy (gameObject);
 		}
 

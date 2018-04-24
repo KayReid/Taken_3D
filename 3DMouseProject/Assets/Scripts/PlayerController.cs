@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 		
 		if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time)
 		{
+			// print ("shoot");
 			lastTimeFired = Time.time;
 			Shoot ();
 		}
@@ -126,6 +127,11 @@ public class PlayerController : MonoBehaviour {
 
 		}
 		*/
+
+
+		// transform.Rotate(Vector3.up * Time.deltaTime);
+		print ("shoot");
+
 		// Instantiate the poop
 		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
 		bullet.transform.rotation = transform.rotation;
