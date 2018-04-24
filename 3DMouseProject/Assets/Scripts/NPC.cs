@@ -44,7 +44,7 @@ public class NPC : MonoBehaviour {
 
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) >= 20) {
 				// MAKE THE ENEMY WONDER AWAY
-				_navMeshagent.Stop;
+				_navMeshagent.Stop();
 			}
 
 			_navMeshagent.SetDestination(targetVector);
