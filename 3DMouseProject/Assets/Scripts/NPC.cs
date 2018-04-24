@@ -41,18 +41,11 @@ public class NPC : MonoBehaviour {
 				aiAnimator.SetBool("aiIsWalking", true);
 			}
 
-			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 1) {
-				_navMeshagent.Stop;
-			}
 
-<<<<<<< HEAD
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) >= 20) {
 				// MAKE THE ENEMY WONDER AWAY
 				_navMeshagent.Stop;
 			}
-=======
-
->>>>>>> df093268f7ce140a662e68147f627350dc038b14
 
 			_navMeshagent.SetDestination(targetVector);
 		}
