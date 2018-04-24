@@ -98,7 +98,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -106,7 +106,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1034,7 +1034,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -1527,7 +1527,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -4014,8 +4014,8 @@ GameObject:
   - component: {fileID: 652341530}
   - component: {fileID: 652341529}
   - component: {fileID: 652341528}
-  - component: {fileID: 652341527}
   - component: {fileID: 652341532}
+  - component: {fileID: 652341527}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4031,7 +4031,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 652341526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c6755d0b11e543b0acef276aa95d85c, type: 3}
+  m_Script: {fileID: 11500000, guid: d856bce5e4b5a454db8d55de9dfc6360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _destination: {fileID: 43026533}
@@ -4095,7 +4095,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652341526}
   m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 5, y: 3.33, z: 5.43}
+  m_LocalPosition: {x: 5, y: 1.35, z: 5.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6243,7 +6243,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -6587,7 +6587,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -7426,6 +7426,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 1557197344555788, guid: 162bbb86efec240b396abff4e93b705a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 162bbb86efec240b396abff4e93b705a, type: 2}
   m_IsPrefabParent: 0
@@ -7674,7 +7678,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -8366,7 +8370,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -8771,7 +8775,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -9541,7 +9545,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -9728,7 +9732,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -9965,7 +9969,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -10384,7 +10388,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 1, y: 0.25, z: 1.35}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 1.35}
   m_TimeToStationary: 0.5
@@ -10477,7 +10481,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4338990583975864, guid: 04b2800a54b8f984d9f09ea8c5639e31, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.56
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 4338990583975864, guid: 04b2800a54b8f984d9f09ea8c5639e31, type: 2}
       propertyPath: m_LocalPosition.z
@@ -10505,7 +10509,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4743017408573550, guid: 04b2800a54b8f984d9f09ea8c5639e31, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04b2800a54b8f984d9f09ea8c5639e31, type: 2}
