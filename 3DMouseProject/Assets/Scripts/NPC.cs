@@ -10,9 +10,12 @@ public class NPC : MonoBehaviour {
 
 	NavMeshAgent _navMeshagent;
 
+	Animator aiAnimator;
+
 	// Use this for initialization
 	public void Start (){
 		_navMeshagent = this.GetComponent<NavMeshAgent>();
+		aiAnimator = GetComponent<Animator>();
 
 		if(_navMeshagent == null){
 			Debug.LogError("Nav Mesh Agent component not found attached to " + gameObject.name);
@@ -32,14 +35,24 @@ public class NPC : MonoBehaviour {
 
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 2){
 				_navMeshagent.Stop();
+				aiAnimator.SetBool("aiIsWalking", false);
 			} else {
 				_navMeshagent.Resume();
+				aiAnimator.SetBool("aiIsWalking", true);
 			}
 
+			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 1) {
+				_navMeshagent.Stop;
+			}
+
+<<<<<<< HEAD
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) >= 20) {
 				// MAKE THE ENEMY WONDER AWAY
 				_navMeshagent.Stop;
 			}
+=======
+
+>>>>>>> df093268f7ce140a662e68147f627350dc038b14
 
 			_navMeshagent.SetDestination(targetVector);
 		}
