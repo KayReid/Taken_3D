@@ -5,8 +5,8 @@ using UnityEngine;
 public class BrokenGlass : MonoBehaviour {
 
     // Injure player when they step on glass
-    void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player")
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Player")
         {
             print("Hit broken glass");
             Player.instance.Injure();
