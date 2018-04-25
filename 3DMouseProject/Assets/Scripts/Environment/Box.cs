@@ -7,9 +7,10 @@ public class Box : MonoBehaviour {
     [Tooltip("An optional item that will appear when the box is destroyed.")]
     [SerializeField] GameObject item = null;
 
+    // The number of times a box can be hit before it is destroyed by the player
     public int hits = 1;
 
-    // Destroy box when shot by player
+    // Called when a bullet from the player hits the box. Will "hurt" the box by 1 each time
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Poop")
