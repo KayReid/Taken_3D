@@ -84,8 +84,7 @@ public class PlayerController : MonoBehaviour {
 			Shoot ();
 		}
 		*/
-		mouseAnimation.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-		//mouseAnimation.SetFloat("Speed", Mathf.Abs(rb.velocity.y));
+
 		Rotate ();
 	}
 		
