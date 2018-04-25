@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: ebe0c66eb1b134188b69b4e863e308cc
+  - enabled: 1
+    path: Assets/Scenes/Binh's Scene.unity
+    guid: 401919fa5e8b0489cbb05bde501bb8c4
