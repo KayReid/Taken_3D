@@ -14,7 +14,7 @@ public class Canon : MonoBehaviour{
     // Method: Collect canon parts if the player collide with the part
     void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            CanonPanel.instance.CollectCanon();
+            // CanonPanel.instance.CollectCanon();
             Destroy(gameObject);
         }
     }
