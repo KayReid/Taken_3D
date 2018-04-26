@@ -1,24 +1,16 @@
 fileFormatVersion: 2
 guid: a5a085a0172ec4cf19bdc8c8bda6c297
-timeCreated: 1524472151
+timeCreated: 1524732437
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Camera
-    100002: Circle
-    100004: //RootNode
-    100006: Lamp
-    400000: Camera
-    400002: Circle
-    400004: //RootNode
-    400006: Lamp
-    2000000: Camera
+    100000: //RootNode
+    400000: //RootNode
     2100000: key
-    2300000: Circle
-    3300000: Circle
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Circle
-    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
