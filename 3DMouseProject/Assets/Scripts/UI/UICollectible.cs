@@ -54,6 +54,7 @@ public class UICollectible : MonoBehaviour {
                 return;
         }
 
+        // Turn sprite's image black
         item.GetComponent<Image>().color = Color.black;
     }
 }
