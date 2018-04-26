@@ -28,8 +28,6 @@ public class DialogueManager : MonoBehaviour {
 
 		pc.canMove = false;
 		pc.canShoot = false;
-		//PlayerController.instance.canMove = false; 
-		//PlayerController.instance.canShoot = false; 
 		anim.SetBool ("IsOpen", true);
 
 		sentences.Clear ();
@@ -58,8 +56,6 @@ public class DialogueManager : MonoBehaviour {
 
 	void EndDialogue(){
 		anim.SetBool ("IsOpen", false);
-		//PlayerController.instance.canMove = true; 
-		//PlayerController.instance.canShoot = true; 
 		pc.canMove = true;
 		pc.canShoot = true;
 	}
