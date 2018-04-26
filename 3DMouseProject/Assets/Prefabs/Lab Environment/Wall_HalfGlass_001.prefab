@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64424828535141832}
   - component: {fileID: 208330119200302858}
   m_Layer: 0
-  m_Name: Glass Wall
+  m_Name: Wall_HalfGlass_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
