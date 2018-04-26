@@ -10,6 +10,11 @@ TagManager:
   - Obstacle
   - dog
   - Key
+  - Wheel1
+  - Wheel2
+  - Pipe
+  - Bomb
+  - Stand
   layers:
   - Default
   - TransparentFX
