@@ -18,7 +18,7 @@ public class Cheese : MonoBehaviour{
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player") {
             Destroy(this.gameObject); // Destroy this cheese object
-            // increase lives by 1 in player script
+            Player.instance.Heal(); 
         }
     }
 

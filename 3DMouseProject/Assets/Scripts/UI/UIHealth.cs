@@ -6,9 +6,15 @@ using UnityEngine.UI;
 public class UIHealth : MonoBehaviour {
 
     [SerializeField] Image[] hearts;
+    public static UIHealth instance;
 
-	// Updates hearts by modifying its image depneding on the number of lives 
-	void UpdateLives(int lives)
+    void Awake()
+    {
+        instance = this;
+    }
+
+    // Updates hearts by modifying its image depending on the number of lives 
+    public void UpdateLives(int lives)
     {
         for (int i = 0; i < hearts.Length; i++)
         {
