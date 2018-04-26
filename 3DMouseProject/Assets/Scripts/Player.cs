@@ -11,12 +11,14 @@ public class Player : MonoBehaviour {
 
 
 	public static Player instance;
-	public int hitpoints = 10;
+    public int maxHealth = 5;
+	private int hitPoints = 5;
 	float lastHitTime = 0;
 
 	// Use this for initialization
 	void Awake () {
 		instance = this;
+        UIHealth.instance.UpdateLives(hitPoints);
 	}
 	
 	// Update is called once per frame
@@ -25,19 +27,33 @@ public class Player : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Destroy the player
+	/// Take away one hitpoint from the player. If the player's health is at 0, then the player will be removed.
 	/// </summary>
 	public void Injure (){
 		if (Time.time >= lastHitTime + 3) {
-			hitpoints--; 
-			print (hitpoints);
+			hitPoints--;
+            UIHealth.instance.UpdateLives(hitPoints);
 			// Need some kind of blinking animation and sound here
-			if (hitpoints == 0) {
+			if (hitPoints == 0) {
 				Die ();
 			}
 			lastHitTime = Time.time;
 		}
 	}
+
+
+    /// <summary>
+    /// Should only be called by the Cheese script, where if the player's health is below 5, then one heart will be given back.
+    /// If health is already at maxHealth, do nothing.
+    /// </summary>
+    public void Heal()
+    {
+        if (hitPoints < maxHealth)
+        {
+            hitPoints++;
+            UIHealth.instance.UpdateLives(hitPoints);
+        }
+    }
 
 	/// <summary>
 	/// Destroy the player
