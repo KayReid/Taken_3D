@@ -33,7 +33,7 @@ public class NPC : MonoBehaviour {
 		if(_destination != null){
 			Vector3 targetVector = _destination.transform.position;
 
-			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 2){
+			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 3){
 				_navMeshagent.Stop();
 				aiAnimator.SetBool("aiIsWalking", false);
 			} else {
@@ -43,8 +43,9 @@ public class NPC : MonoBehaviour {
 
 
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) >= 20) {
-				// MAKE THE ENEMY WONDER AWAY
+				// MAKE THE ENEMY WONDER AWAY? JUST STOPS NOW
 				_navMeshagent.Stop();
+				aiAnimator.SetBool("aiIsWalking", false);
 			}
 
 			_navMeshagent.SetDestination(targetVector);
