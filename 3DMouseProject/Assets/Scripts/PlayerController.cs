@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector] public float moveFB; // move back and forth
 	[HideInInspector] public bool inputFire; // move back and forth
 	[HideInInspector] public bool inputJump; // move back and forth
+	[HideInInspector] public bool canMove; // Check whether the player can move
 
 	[Header ("Rotation of the player")]
 	public Vector3 mousePos;
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour {
 	public float Shitspeed = 13; // How fast is the poop moving towards the mouse pointer
 	public float range = 50f; // How far the shooting can go
 	public Transform firePoint;
+	public bool canShoot;
+	private LineRenderer laserline;
 
 	[Header ("Others")]
 	public float speed = 2f;
@@ -42,49 +45,53 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		laserline = GetComponent<LineRenderer> ();
 		rb = GetComponent<Rigidbody> ();
 		coll = GetComponent<Collider> ();
 		mouseAnimation = GetComponent<Animator> ();
 		cam = Camera.main;
 		inputFire = false;
+		canMove = true; 
+		canShoot = true;
 
 	}
 
 	// Movement and Jumping
 	void FixedUpdate () {
 		// Move left, right, back, and forth
+		if (canMove) {
+			rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
 
-		rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
+			if (inputJump && Grounded ()) {
+				// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
+				rb.AddForce (Vector3.up * Mathf.Sqrt (jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
 
-		if (inputJump && Grounded()) {
-			// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
-			rb.AddForce(Vector3.up * Mathf.Sqrt(jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
-
-		}
-		if (moveLR != 0 || moveFB != 0) {
-			mouseAnimation.SetBool("isWalking", true);
-		} else {
-			mouseAnimation.SetBool("isWalking", false);
+			}
+			if (moveLR != 0 || moveFB != 0) {
+				mouseAnimation.SetBool ("isWalking", true);
+			} else {
+				mouseAnimation.SetBool ("isWalking", false);
+			}
 		}
 
 	}
 
 	// Shooting and rotating
 	void Update () {
-		
-		if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time)
-		{
-			// print ("shoot");
-			lastTimeFired = Time.time;
-			Shoot ();
+		if (canShoot) {
+			if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time) {
+				// print ("shoot");
+				lastTimeFired = Time.time;
+				// transform.eulerAngles = new Vector3(0,180,0);
+				// StartCoroutine (ShotEffect ());
+				Shoot ();
+			}
+			/*
+			if (inputFire) {
+				Shoot ();
+			}
+			*/
 		}
-		/*
-		if (inputFire) {
-			Shoot ();
-		}
-		*/
-
 		Rotate ();
 	}
 		
@@ -125,17 +132,50 @@ public class PlayerController : MonoBehaviour {
 			}
 
 		}
-		*/
 
+
+
+		print ("shoot");
+		RaycastHit hit;
+		laserline.SetPosition (0, firePoint.position);
+
+		if (Physics.Raycast (Player.instance.transform.position, target, out hit, range)) {
+
+			laserline.SetPosition (1, hit.point);
+
+			EnemyFollow enemy = hit.transform.GetComponent<EnemyFollow> ();
+			if (enemy != null) { // Only do this when found the component. 
+				print ("hit");
+				Debug.Log (hit.transform.name);
+				enemy.Hurt ();
+			}
+
+		} 
+		*/
 
 		// transform.Rotate(Vector3.up * Time.deltaTime);
 		print ("shoot");
+
+		// mouseAnimation.SetTrigger ("attack");
+
 
 		// Instantiate the poop
 		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
 		bullet.transform.rotation = transform.rotation;
 
+		//Rigidbody bulletrb = bullet.GetComponent<Rigidbody> ();
 
+		//bulletrb.velocity = BallisticVel(mousePos); 
+		// pass the angle and the target transform 
+
+	}
+		
+
+
+	IEnumerator ShotEffect(){
+		laserline.enabled = true;
+		yield return new WaitForSeconds (0.07f);
+		laserline.enabled = false;
 	}
 
 }
