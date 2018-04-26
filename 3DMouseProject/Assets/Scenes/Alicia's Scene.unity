@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 111486898}
   - component: {fileID: 111486900}
   - component: {fileID: 111486899}
+  - component: {fileID: 111486901}
   m_Layer: 5
   m_Name: CollectiblePanel
   m_TagString: Untagged
@@ -181,7 +182,11 @@ RectTransform:
   m_LocalScale: {x: 0.9999974, y: 0.9999974, z: 0.9999974}
   m_Children:
   - {fileID: 493979488}
-  - {fileID: 874868745}
+  - {fileID: 1310481440}
+  - {fileID: 1681265390}
+  - {fileID: 1216116548}
+  - {fileID: 245698781}
+  - {fileID: 1868248012}
   m_Father: {fileID: 263560402}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,6 +228,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 111486897}
+--- !u!114 &111486901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111486897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1f8879b9274464d8b0eef5bfe371b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 493979489}
+  pipe: {fileID: 1310481441}
+  wheel1: {fileID: 1681265391}
+  wheel2: {fileID: 1216116549}
+  stand: {fileID: 245698782}
+  bomb: {fileID: 1868248013}
 --- !u!1 &119930347
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +863,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 162bbb86efec240b396abff4e93b705a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &200017094
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 19.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.49999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.50000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298534083270512, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 72666e94b58fbdb43b383d05a83149dd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &203436701 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4903619860931246, guid: 162bbb86efec240b396abff4e93b705a,
@@ -1203,7 +1267,7 @@ GameObject:
   - component: {fileID: 245698783}
   - component: {fileID: 245698782}
   m_Layer: 5
-  m_Name: Canon 4
+  m_Name: Stand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1219,8 +1283,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 874868745}
-  m_RootOrder: 3
+  m_Father: {fileID: 111486898}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6666, y: 0}
   m_AnchorMax: {x: 0.83333, y: 1}
@@ -5820,51 +5884,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4903619860931246, guid: 162bbb86efec240b396abff4e93b705a,
     type: 2}
   m_PrefabInternal: {fileID: 328280839}
---- !u!1 &874868744
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 874868745}
-  - component: {fileID: 874868746}
-  m_Layer: 5
-  m_Name: CanonParts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &874868745
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 874868744}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1310481440}
-  - {fileID: 1681265390}
-  - {fileID: 1216116548}
-  - {fileID: 245698781}
-  - {fileID: 1868248012}
-  m_Father: {fileID: 111486898}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
---- !u!222 &874868746
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 874868744}
 --- !u!1001 &889537584
 Prefab:
   m_ObjectHideFlags: 0
@@ -7651,7 +7670,7 @@ GameObject:
   - component: {fileID: 1216116550}
   - component: {fileID: 1216116549}
   m_Layer: 5
-  m_Name: Canon 3
+  m_Name: Wheel 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7667,8 +7686,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 874868745}
-  m_RootOrder: 2
+  m_Father: {fileID: 111486898}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4999, y: 0}
   m_AnchorMax: {x: 0.66666, y: 1}
@@ -8263,7 +8282,7 @@ GameObject:
   - component: {fileID: 1310481442}
   - component: {fileID: 1310481441}
   m_Layer: 5
-  m_Name: Canon 1
+  m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8279,8 +8298,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 874868745}
-  m_RootOrder: 0
+  m_Father: {fileID: 111486898}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.166, y: 0}
   m_AnchorMax: {x: 0.3333, y: 1}
@@ -10093,7 +10112,7 @@ GameObject:
   - component: {fileID: 1681265392}
   - component: {fileID: 1681265391}
   m_Layer: 5
-  m_Name: Canon 2
+  m_Name: Wheel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10109,8 +10128,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 874868745}
-  m_RootOrder: 1
+  m_Father: {fileID: 111486898}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3333, y: 0}
   m_AnchorMax: {x: 0.49999, y: 1}
@@ -10631,14 +10650,14 @@ RectTransform:
   m_GameObject: {fileID: 1868248011}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.7}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.6999999}
   m_Children: []
-  m_Father: {fileID: 874868745}
-  m_RootOrder: 4
+  m_Father: {fileID: 111486898}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8333, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000038146973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868248013

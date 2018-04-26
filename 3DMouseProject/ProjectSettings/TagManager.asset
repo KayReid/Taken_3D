@@ -9,6 +9,7 @@ TagManager:
   - Glass
   - Obstacle
   - dog
+  - Key
   layers:
   - Default
   - TransparentFX
