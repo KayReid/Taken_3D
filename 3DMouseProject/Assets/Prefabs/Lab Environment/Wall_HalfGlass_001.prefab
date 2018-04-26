@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 33253830697894442}
   - component: {fileID: 23323827434070424}
   - component: {fileID: 64424828535141832}
+  - component: {fileID: 208330119200302858}
   m_Layer: 0
-  m_Name: Wall_HalfGlass_001
+  m_Name: Glass Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,3 +100,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300074, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!208 &208330119200302858
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557197344555788}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.25, z: 1.35}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.35}
+  m_TimeToStationary: 0.5
