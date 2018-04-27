@@ -10,6 +10,9 @@ public class EnemySpawn : MonoBehaviour {
 	List<GameObject> enemyList = new List<GameObject>();
 	int prefabIndex;
 
+	private int numEnemies = 0;
+	public int maxEnemies = 3;
+
 
 	// Use this for initialization
 	void Start () {
@@ -22,13 +25,15 @@ public class EnemySpawn : MonoBehaviour {
 	IEnumerator SpawnEnemyCoroutine () {
 		// forever
 		while (true) {
-			print ("Start");
-			prefabIndex = UnityEngine.Random.Range(0,1);
-			Vector3 spawnPosition = transform.position;
-			Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
-
-			yield return new WaitForSeconds(Random.Range(10,15));
+			if (numEnemies < maxEnemies) {
+				print ("Start");
+				prefabIndex = UnityEngine.Random.Range(0,1);
+				Vector3 spawnPosition = transform.position;
+				Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
+				numEnemies++;
+			}
 			// yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(Random.Range(3,5));
 
 		}
 
