@@ -36,8 +36,10 @@ public class Player : MonoBehaviour {
 			// Need some kind of blinking animation and sound here
 			if (hitPoints == 0) {
 				Die ();
-			}
-			lastHitTime = Time.time;
+                return;
+            }
+            CameraController.instance.ScreenShakeLight();
+            lastHitTime = Time.time;
 		}
 	}
 
@@ -60,6 +62,7 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	public void Die ()
 	{
+        CameraController.instance.ScreenShakeStrong();
 		Invoke ("Remove" , 1);
 		// Need some kind of death animation and sound here
 		// Restart game here
