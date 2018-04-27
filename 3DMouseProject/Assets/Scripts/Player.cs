@@ -64,8 +64,8 @@ public class Player : MonoBehaviour {
 	{
         CameraController.instance.ScreenShakeStrong();
 		Invoke ("Remove" , 1);
-		// Need some kind of death animation and sound here
-		// Restart game here
+        GameManager.instance.RestartTheGameAfterSeconds(1);
+		// Need some kind of death animation and sound here]
 	}
 
 	/// <summary>
