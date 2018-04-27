@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4462370572281674}
   - component: {fileID: 33808591609803136}
-  - component: {fileID: 136768002811528734}
   - component: {fileID: 23709032869151456}
+  - component: {fileID: 64867722139221878}
   - component: {fileID: 114440351369529682}
   m_Layer: 0
   m_Name: Cheese
@@ -36,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136110991165906}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5795126, y: 0, z: -1.438}
-  m_LocalScale: {x: 1, y: 0.23337996, z: 1.0167193}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 14.76, y: 0.87, z: 13.17}
+  m_LocalScale: {x: 62.29119, y: 62.29119, z: 22.287252}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 98c97a24469d3404495473e63b75340c, type: 2}
+  - {fileID: 2100000, guid: a195c6579b4e14ce4843fb5602155439, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -83,7 +83,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136110991165906}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: a195c6579b4e14ce4843fb5602155439, type: 3}
+--- !u!64 &64867722139221878
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136110991165906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a195c6579b4e14ce4843fb5602155439, type: 3}
 --- !u!114 &114440351369529682
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,16 +109,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560cc2e8de5f24f2b9c6f5fa21ab5573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &136768002811528734
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1136110991165906}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}

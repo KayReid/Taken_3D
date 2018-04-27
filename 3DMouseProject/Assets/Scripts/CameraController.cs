@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour {
         // borrowed 
         if (screenShakeTimer > 0)
         {
-            Vector3 newOffset = Random.insideUnitCircle * screenShakeStrength;
+            Vector3 newOffset = Random.insideUnitCircle * screenShakeStrength; // must assign on different line to force Vector2 -> Vector3
             newOffset += offset;
             screenShakeTimer -= Time.deltaTime;
             transform.position = target.transform.position + newOffset;
