@@ -27,8 +27,8 @@ public class EnemySpawn : MonoBehaviour {
 			Vector3 spawnPosition = transform.position;
 			Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
 
-			// yield return new WaitForSeconds(Random.Range(10,15));
-			yield return new WaitForSeconds(2);
+			yield return new WaitForSeconds(Random.Range(10,15));
+			// yield return new WaitForSeconds(2);
 
 		}
 
