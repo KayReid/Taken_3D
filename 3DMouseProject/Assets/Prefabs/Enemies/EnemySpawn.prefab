@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c165237cfa945d097df0b71fd6cbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catPrefab: {fileID: 1709706610864712, guid: af7f6e76b92634b9baab38d555c02c41, type: 2}
-  dogPrefab: {fileID: 1079884152591088, guid: 8774c912152b64b2a89b29c415849902, type: 2}
+  catPrefab: {fileID: 1946330166207844, guid: 1756523d0ce2345b6bc7b332769722cc, type: 2}
+  dogPrefab: {fileID: 1067947343583494, guid: b10e181bd04674d40bcb1f5bdc600433, type: 2}
+  numEnemies: 0
   maxEnemies: 3
