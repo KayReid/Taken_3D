@@ -12,6 +12,8 @@ public class KeyDoor : MonoBehaviour {
 
 	public Dialogue dialogue;
 
+	public GameObject wife;
+
 	[SerializeField]
 	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
 	[SerializeField]
@@ -57,12 +59,13 @@ public class KeyDoor : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-
+		
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
 					if (Key.keyActivated) {
 						StartCoroutine (OpenDoors ());
+						wife.transform.parent = transform;
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
 					}
