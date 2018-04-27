@@ -26884,7 +26884,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1828493773246348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.75, y: 0.24, z: 7.1196246}
+  m_LocalPosition: {x: 12.03951, y: -2.5732735e-17, z: 15.223054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4722668599521300}
@@ -34851,6 +34851,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec06b75cb6b6d41b2962b4a90e6f6009, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerRenderer: {fileID: 0}
+  damageMaterials: []
+  hurtSound: {fileID: 8300000, guid: 08408ee62ce714ae68fceec424f65271, type: 3}
+  deathSound: {fileID: 8300000, guid: 252cd8c6853064031b9304de2fe962b1, type: 3}
+  invulnerable: 0
   maxHealth: 5
 --- !u!114 &114323741196171974
 MonoBehaviour:
