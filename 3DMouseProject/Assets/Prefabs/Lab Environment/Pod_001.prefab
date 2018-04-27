@@ -112,7 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
-  hits: 1
+  hits: 2
+  shakeTimeStandard: 0.2
+  shakeStrengthStandard: 0.15
 --- !u!208 &208915957441650478
 NavMeshObstacle:
   m_ObjectHideFlags: 1

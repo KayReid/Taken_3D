@@ -12024,6 +12024,7 @@ GameObject:
   - component: {fileID: 136701406532027422}
   - component: {fileID: 114731772940836222}
   - component: {fileID: 195139616558965998}
+  - component: {fileID: 114136531416457376}
   m_Layer: 0
   m_Name: cat_obj
   m_TagString: Untagged
@@ -22314,7 +22315,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738875991946364}
-  m_LocalRotation: {x: -0.00009485226, y: -0.5744703, z: -0.60409653, w: 0.55231464}
+  m_LocalRotation: {x: -0.00009485224, y: -0.5744702, z: -0.6040965, w: 0.5523146}
   m_LocalPosition: {x: -1.3411044e-10, y: -7.705968e-10, z: 9.0524555e-10}
   m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999999}
   m_Children:
@@ -22909,7 +22910,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341543829718292}
-  m_LocalRotation: {x: 0.31487465, y: 0.5930417, z: 0.115108825, w: 0.7320557}
+  m_LocalRotation: {x: 0.31487462, y: 0.59304166, z: 0.11510881, w: 0.73205566}
   m_LocalPosition: {x: 7.6834115e-11, y: 5.811453e-10, z: -9.946525e-10}
   m_LocalScale: {x: 1, y: 0.9999998, z: 1}
   m_Children:
@@ -24537,7 +24538,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961640766837202}
-  m_LocalRotation: {x: -0.5324694, y: 0.5838161, z: 0.5810072, w: 0.19510503}
+  m_LocalRotation: {x: -0.53246933, y: 0.58381605, z: 0.5810071, w: 0.195105}
   m_LocalPosition: {x: -1.6763807e-10, y: 1.6528023e-10, z: -3.7334394e-10}
   m_LocalScale: {x: 1.0000001, y: 1.0000002, z: 1}
   m_Children:
@@ -33557,6 +33558,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114136531416457376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709706610864712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e801d82a2194e639a03e300b9a7e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
+  shakeTimeStandard: 0.2
+  shakeStrengthStandard: 0.15
 --- !u!114 &114731772940836222
 MonoBehaviour:
   m_ObjectHideFlags: 1
