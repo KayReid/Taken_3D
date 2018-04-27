@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour {
+public class Enemy : MonoBehaviour {
 
 	int health = 2;
 
@@ -17,14 +17,17 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	// FIGURE  SHIT OUT
-	void OnCollisionEnter(Collision shit){
-		if (shit.collider.GetComponent<Poop>()){
+	void OnCollisionEnter(Collision other){
+		if (other.collider.GetComponent<Poop>()){
 			health--;
 		}
-
+		if (other.gameObject.tag == "Player") {
+			Player.instance.Injure(); 
+		}
 		if (health <= 0) {
 			Destroy (gameObject);
 		}
 	}
+
 }
 	

@@ -46,7 +46,6 @@ public class Player : MonoBehaviour {
 		
 		hitPoints--;
         UIHealth.instance.UpdateLives(hitPoints);
-        Debug.Log("Taking Damage");
 
         if (hitPoints == 0){
             Die();
@@ -74,12 +73,14 @@ public class Player : MonoBehaviour {
             timer += Time.deltaTime;
             if (blink)
             {
-                playerRenderer.sharedMaterial = damageMaterials [1];
+                //playerRenderer.sharedMaterial = damageMaterials [1];
+                instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
                 Debug.Log("Red Hurt");
             }
             else
             {   
-                playerRenderer.sharedMaterial = damageMaterials [0];
+                //playerRenderer.sharedMaterial = damageMaterials [0];
+                instance.gameObject.GetComponent<Renderer>().material.color = Color.red;
                 Debug.Log("White Hurt");
             }
             yield return new WaitForSeconds(0.05f);
