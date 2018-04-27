@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 
     public int maxHealth = 5;
 	private int hitPoints = 5;
-    private float hurtTime = .5f;
+    private float hurtTime = 2f;
 
     // Use this for initialization
     void Awake () {

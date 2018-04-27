@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour {
     }
 
 	// FIGURE  SHIT OUT
-	void OnCollisionEnter(Collision other){
+	void OnCollisionStay(Collision other){
 		if (other.collider.GetComponent<Poop>()){
 			health--;
             shakeTimeRemaining = shakeTimeStandard;
