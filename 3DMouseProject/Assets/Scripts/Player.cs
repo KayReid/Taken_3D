@@ -12,6 +12,7 @@ public class Player : MonoBehaviour {
     public static Player instance;
     public Renderer playerRenderer;
     public Material[] damageMaterials;
+    public bool invulnerable = false;
 
     public int maxHealth = 5;
 	private int hitPoints = 5;
@@ -22,8 +23,7 @@ public class Player : MonoBehaviour {
     // </copyright>
     // <author>Benno Lueders</author>
     // <date>07/14/2017</date>
-    float hurtTimer = 0.1f;
-    Coroutine hurtRoutine;
+
 
     // Use this for initialization
     void Awake () {
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
         UIHealth.instance.UpdateLives(hitPoints);
         playerRenderer = GetComponent<Renderer>();
         playerRenderer.enabled = true;
+
 	}
 	
 	// Update is called once per frame
@@ -43,51 +44,20 @@ public class Player : MonoBehaviour {
     /// The player will be invulnerable for hurtTimer time.
 	/// </summary>
 	public void Injure (){
-		
+        invulnerable = true;
 		hitPoints--;
         UIHealth.instance.UpdateLives(hitPoints);
-
         if (hitPoints == 0){
             Die();
             return;
-        }   
-
-        if (hurtRoutine != null){
-            StopCoroutine(hurtRoutine);
-        }
-        Debug.Log("Taking Damage");
-        hurtRoutine = StartCoroutine(HurtRoutine());
-
+        } 
+        //Debug.Log("Taking Damage");
         CameraController.instance.ScreenShakeLight();
-		
+        if (invulnerable == true) {
+            StartCoroutine(Invulnerable(3));
+        }
 	}
 
-    // borrowed code
-    IEnumerator HurtRoutine()
-    {
-        float timer = 0;
-        bool blink = false;
-        while (timer < hurtTimer)
-        {
-            blink = !blink;
-            timer += Time.deltaTime;
-            if (blink)
-            {
-                //playerRenderer.sharedMaterial = damageMaterials [1];
-                instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
-                Debug.Log("Red Hurt");
-            }
-            else
-            {   
-                //playerRenderer.sharedMaterial = damageMaterials [0];
-                instance.gameObject.GetComponent<Renderer>().material.color = Color.red;
-                Debug.Log("White Hurt");
-            }
-            yield return new WaitForSeconds(0.05f);
-        }
-        playerRenderer.sharedMaterial = damageMaterials [1];
-        //Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
-    }
     // /borrowed code
 
     /// <summary>
@@ -120,5 +90,13 @@ public class Player : MonoBehaviour {
 	public void Remove (){
 		Destroy (gameObject);
 	}
+
+
+    IEnumerator Invulnerable (float seconds)
+    {
+        Debug.Log("Invulnerable for 2 seconds");
+        yield return new WaitForSeconds (seconds);
+        invulnerable = false;
+    }
 
 }

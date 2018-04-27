@@ -6,8 +6,9 @@ public class BrokenGlass : MonoBehaviour {
 
     // Injure player when they step on glass
     void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && Player.instance.invulnerable != true)
         {
+        	Player.instance.invulnerable = true;
             print("Hit broken glass");
             Player.instance.Injure();
         }

@@ -21,8 +21,8 @@ public class Enemy : MonoBehaviour {
 		if (other.collider.GetComponent<Poop>()){
 			health--;
 		}
-		if (other.gameObject.tag == "Player") {
-			Player.instance.Injure(); 
+		if (other.gameObject.tag == "Player" && Player.instance.invulnerable != true) {
+			Player.instance.Injure();
 		}
 		if (health <= 0) {
 			Destroy (gameObject);
