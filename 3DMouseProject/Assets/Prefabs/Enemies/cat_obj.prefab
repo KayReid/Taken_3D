@@ -33570,6 +33570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  hurtSound: {fileID: 8300000, guid: 323c40997d39af649b9b142be13d6a70, type: 3}
   shakeTimeStandard: 0.2
   shakeStrengthStandard: 0.15
 --- !u!114 &114731772940836222
