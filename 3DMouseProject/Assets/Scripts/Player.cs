@@ -16,14 +16,12 @@ public class Player : MonoBehaviour {
 
     public int maxHealth = 5;
 	private int hitPoints = 5;
+    private float hurtTime = .5f;
 
     // Use this for initialization
     void Awake () {
 		instance = this;
         UIHealth.instance.UpdateLives(hitPoints);
-        playerRenderer = GetComponent<Renderer>();
-        playerRenderer.enabled = true;
-
 	}
 	
 	// Update is called once per frame
@@ -40,14 +38,14 @@ public class Player : MonoBehaviour {
 		hitPoints--;
         UIHealth.instance.UpdateLives(hitPoints);
         if (hitPoints == 0){
-            HurtImage.instance.DisplayHurt(.5f);
+            HurtImage.instance.DisplayHurt(hurtTime);
             Die();
             return;
         } 
         CameraController.instance.ScreenShakeLight();
         if (invulnerable == true) {
-            HurtImage.instance.DisplayHurt(.5f);
-            StartCoroutine(Invulnerable(.5f));
+            HurtImage.instance.DisplayHurt(hurtTime);
+            StartCoroutine(Invulnerable(hurtTime));
         }
 	}
 
