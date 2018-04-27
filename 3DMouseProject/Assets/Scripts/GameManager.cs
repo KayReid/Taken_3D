@@ -24,6 +24,6 @@ public class GameManager : MonoBehaviour {
     IEnumerator LoadSceneAfterSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("MainMenu");
     }
 }
