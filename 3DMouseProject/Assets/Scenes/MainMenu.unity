@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9d404594616945348bf86d1aa6d213d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: Binh's Scene
+  firstLevel: NPCtest Scene
   mainMenu: {fileID: 166119926}
 --- !u!114 &72258813
 MonoBehaviour:
