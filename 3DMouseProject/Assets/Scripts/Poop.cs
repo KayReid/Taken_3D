@@ -41,8 +41,9 @@ public class Poop : MonoBehaviour {
 	{
 		if (col.collider.CompareTag ("enemy")) {
 			print ("hit");
-			col.collider.GetComponent<NPC> ();
+			GameObject enemy = col.collider.GetComponent<GameObject> ();
 			Destroy (gameObject);
+			Destroy (enemy);
 		} else {
 			print ("hit something else");
 			Destroy (gameObject);
