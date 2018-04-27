@@ -7,6 +7,8 @@ public class Box : MonoBehaviour {
     [Tooltip("An optional item that will appear when the box is destroyed.")]
     [SerializeField] GameObject item = null;
 
+    public AudioClip breakSound;
+
     // The number of times a box can be hit before it is destroyed by the player
     public int hits = 1;
     // The amount of time the box should be shaking
@@ -33,6 +35,7 @@ public class Box : MonoBehaviour {
         if (other.gameObject.tag == "Poop")
         {
             hits--;
+            AudioSource.PlayClipAtPoint(breakSound, transform.position);
             shakeTimeRemaining = shakeTimeStandard;
 
             Quaternion keyRotation = Quaternion.Euler(new Vector3(-80.5f, -159.2f, 183.5f));
