@@ -10,6 +10,9 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public static Player instance;
+    public Renderer playerRenderer;
+    public Material[] damageMaterials;
+
     public int maxHealth = 5;
 	private int hitPoints = 5;
 
@@ -26,6 +29,8 @@ public class Player : MonoBehaviour {
     void Awake () {
 		instance = this;
         UIHealth.instance.UpdateLives(hitPoints);
+        playerRenderer = GetComponent<Renderer>();
+        playerRenderer.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +46,7 @@ public class Player : MonoBehaviour {
 		
 		hitPoints--;
         UIHealth.instance.UpdateLives(hitPoints);
+        Debug.Log("Taking Damage");
 
         if (hitPoints == 0){
             Die();
@@ -50,7 +56,9 @@ public class Player : MonoBehaviour {
         if (hurtRoutine != null){
             StopCoroutine(hurtRoutine);
         }
+        Debug.Log("Taking Damage");
         hurtRoutine = StartCoroutine(HurtRoutine());
+
         CameraController.instance.ScreenShakeLight();
 		
 	}
@@ -66,16 +74,18 @@ public class Player : MonoBehaviour {
             timer += Time.deltaTime;
             if (blink)
             {
-                Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                playerRenderer.sharedMaterial = damageMaterials [1];
+                Debug.Log("Red Hurt");
             }
             else
-            {
-                Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
+            {   
+                playerRenderer.sharedMaterial = damageMaterials [0];
+                Debug.Log("White Hurt");
             }
             yield return new WaitForSeconds(0.05f);
         }
-
-        Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
+        playerRenderer.sharedMaterial = damageMaterials [1];
+        //Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
     }
     // /borrowed code
 
