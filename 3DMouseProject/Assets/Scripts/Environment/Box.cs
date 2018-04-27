@@ -10,12 +10,21 @@ public class Box : MonoBehaviour {
     // The number of times a box can be hit before it is destroyed by the player
     public int hits = 1;
     // The amount of time the box should be shaking
-    public float 
-    int shakeTimeRemaining;
+    public float shakeTimeStandard = 0.2f;
+    // The strength of the box shake
+    public float shakeStrengthStandard = 0.15f;
+
+    private float shakeTimeRemaining;
 
     private void Update()
     {
-        
+        if (shakeTimeRemaining > 0)
+        {
+            Vector3 shake = new Vector3(Random.Range(-.2f, .2f), 0, Random.Range(-.2f, .2f)) * shakeStrengthStandard;
+            shakeTimeRemaining -= Time.deltaTime;
+            transform.position += shake;
+            return;
+        }   
     }
 
     // Called when a bullet from the player hits the box. Will "hurt" the box by 1 each time
