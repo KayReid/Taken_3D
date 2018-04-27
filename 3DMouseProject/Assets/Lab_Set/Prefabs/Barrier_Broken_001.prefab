@@ -73,6 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4335069451127120}
+  - component: {fileID: 208179838898715832}
   m_Layer: 0
   m_Name: Barrier_Broken_001
   m_TagString: Untagged
@@ -300,3 +301,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!208 &208179838898715832
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961364773922156}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

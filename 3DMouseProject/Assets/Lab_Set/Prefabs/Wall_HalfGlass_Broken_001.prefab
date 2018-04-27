@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33736580322135672}
   - component: {fileID: 23720986389379498}
   - component: {fileID: 64961366059465234}
+  - component: {fileID: 208799857706060020}
   m_Layer: 0
   m_Name: Wall_HalfGlass_Broken_001
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!208 &208799857706060020
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399334292610154}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.25, z: 1.024}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.024}
+  m_TimeToStationary: 0.5

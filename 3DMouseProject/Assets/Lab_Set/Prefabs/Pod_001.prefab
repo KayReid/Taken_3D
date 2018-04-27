@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33801666187473634}
   - component: {fileID: 23193760348596822}
   - component: {fileID: 64618242016130100}
+  - component: {fileID: 208915957441650478}
+  - component: {fileID: 114040376384780394}
   m_Layer: 0
   m_Name: Pod_001
   m_TagString: Untagged
@@ -98,3 +100,31 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300040, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!114 &114040376384780394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415156583356516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b288909d716f2c542a046e41cbdb77b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  hits: 1
+--- !u!208 &208915957441650478
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415156583356516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.563, y: 0.5, z: 1.0630001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.063, y: 0, z: 1.0630001}
+  m_TimeToStationary: 0.5

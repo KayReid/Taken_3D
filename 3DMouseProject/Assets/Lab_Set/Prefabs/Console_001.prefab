@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33131935792776166}
   - component: {fileID: 23372255388589138}
   - component: {fileID: 64946642133638900}
+  - component: {fileID: 208569000235237904}
   m_Layer: 0
   m_Name: Console_001
   m_TagString: Untagged
@@ -99,3 +100,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300050, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!208 &208569000235237904
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295273866393966}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.5, z: 0.98100007}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.014, z: 0.97900003}
+  m_TimeToStationary: 0.5

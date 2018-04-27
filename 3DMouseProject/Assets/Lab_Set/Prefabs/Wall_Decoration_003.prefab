@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33966837950330014}
   - component: {fileID: 23273969614787190}
   - component: {fileID: 64712109058680314}
+  - component: {fileID: 208405405382330928}
   m_Layer: 0
   m_Name: Wall_Decoration_003
   m_TagString: Untagged
@@ -97,3 +98,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300012, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!208 &208405405382330928
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207357458379336}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.12100001, y: 0.101, z: 1.325}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.049000002, z: 1.325}
+  m_TimeToStationary: 0.5
