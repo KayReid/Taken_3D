@@ -9,14 +9,22 @@ public class Box : MonoBehaviour {
 
     // The number of times a box can be hit before it is destroyed by the player
     public int hits = 1;
- 
+    // The amount of time the box should be shaking
+    public float 
+    int shakeTimeRemaining;
+
+    private void Update()
+    {
+        
+    }
+
     // Called when a bullet from the player hits the box. Will "hurt" the box by 1 each time
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Poop")
         {
             hits--;
-
+            shakeTimeRemaining = shakeTimeStandard;
 
             Quaternion keyRotation = Quaternion.Euler(new Vector3(-80.5f, -159.2f, 183.5f));
             Vector3 keyPosition = new Vector3(transform.position.x, .5f, transform.position.z);

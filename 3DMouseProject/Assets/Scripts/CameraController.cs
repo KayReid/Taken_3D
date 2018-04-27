@@ -15,11 +15,11 @@ public class CameraController : MonoBehaviour {
     [Header("ScrenShake")]
     [Tooltip("How long is a strong standart screen shake.")]
     [SerializeField] float shakeTimeStandardStrong = 0.5f;
-    [Tooltip("How much does the camera shake during a strong standart screen shake.")]
+    [Tooltip("How much does the camera shake during a strong standard screen shake.")]
     [SerializeField] float strengthStandardStrong = 0.5f;
     [Tooltip("How long is a light standard screen shake.")]
     [SerializeField] float shakeTimeStandardLight = 0.2f;
-    [Tooltip("How much does the camera shake during a light standart screen shake.")]
+    [Tooltip("How much does the camera shake during a light standard screen shake.")]
     [SerializeField] float strengthStandardLight = 0.2f;
 
     float screenShakeStrength = 0;
