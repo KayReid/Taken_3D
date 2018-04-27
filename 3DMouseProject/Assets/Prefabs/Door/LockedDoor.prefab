@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 33513732619463248}
   - component: {fileID: 23661894526850552}
   - component: {fileID: 64897400316680526}
+  - component: {fileID: 208323448870111360}
   m_Layer: 8
   m_Name: Wall_2_Doorway
   m_TagString: Untagged
@@ -505,6 +506,21 @@ MonoBehaviour:
     type: 3}
   doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
     type: 3}
+--- !u!208 &208323448870111360
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296597623291548}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2, y: 0.25, z: 1.35}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.35}
+  m_TimeToStationary: 0.5
 --- !u!208 &208330801185857028
 NavMeshObstacle:
   m_ObjectHideFlags: 1
