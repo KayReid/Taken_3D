@@ -13,7 +13,6 @@ public class Player : MonoBehaviour {
     public Renderer playerRenderer;
     public Material[] damageMaterials;
     public bool invulnerable = false;
-	public Dialogue dialogue;
 
     public int maxHealth = 5;
 	private int hitPoints = 5;
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Awake () {
 		instance = this;
-		FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
         UIHealth.instance.UpdateLives(hitPoints);
 	}
 	
