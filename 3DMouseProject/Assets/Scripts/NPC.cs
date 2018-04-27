@@ -16,6 +16,7 @@ public class NPC : MonoBehaviour {
 	public void Start (){
 		_navMeshagent = this.GetComponent<NavMeshAgent>();
 		aiAnimator = GetComponent<Animator>();
+		_destination = GameObject.FindGameObjectWithTag ("Player").transform;
 
 		if(_navMeshagent == null){
 			Debug.LogError("Nav Mesh Agent component not found attached to " + gameObject.name);

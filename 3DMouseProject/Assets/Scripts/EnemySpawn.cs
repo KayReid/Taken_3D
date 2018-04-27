@@ -22,7 +22,7 @@ public class EnemySpawn : MonoBehaviour {
 	IEnumerator SpawnEnemyCoroutine () {
 		// forever
 		while (true) {
-
+			print ("Start");
 			prefabIndex = UnityEngine.Random.Range(0,1);
 			Vector3 spawnPosition = transform.position;
 			Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
