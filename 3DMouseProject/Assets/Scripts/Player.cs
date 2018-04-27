@@ -17,14 +17,6 @@ public class Player : MonoBehaviour {
     public int maxHealth = 5;
 	private int hitPoints = 5;
 
-    // All code regarding the injury coroutine has been borrowed and modified for reuse
-    // <copyright file="Player.cs" company="DIS Copenhagen">
-    // Copyright (c) 2017 All Rights Reserved
-    // </copyright>
-    // <author>Benno Lueders</author>
-    // <date>07/14/2017</date>
-
-
     // Use this for initialization
     void Awake () {
 		instance = this;
@@ -48,17 +40,22 @@ public class Player : MonoBehaviour {
 		hitPoints--;
         UIHealth.instance.UpdateLives(hitPoints);
         if (hitPoints == 0){
+            HurtImage.instance.DisplayHurt(.5f);
             Die();
             return;
         } 
-        //Debug.Log("Taking Damage");
         CameraController.instance.ScreenShakeLight();
         if (invulnerable == true) {
-            StartCoroutine(Invulnerable(3));
+            HurtImage.instance.DisplayHurt(.5f);
+            StartCoroutine(Invulnerable(.5f));
         }
 	}
 
-    // /borrowed code
+    IEnumerator Invulnerable(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        invulnerable = false;
+    }
 
     /// <summary>
     /// Should only be called by the Cheese script, where if the player's health is below 5, then one heart will be given back.
@@ -90,13 +87,5 @@ public class Player : MonoBehaviour {
 	public void Remove (){
 		Destroy (gameObject);
 	}
-
-
-    IEnumerator Invulnerable (float seconds)
-    {
-        Debug.Log("Invulnerable for 2 seconds");
-        yield return new WaitForSeconds (seconds);
-        invulnerable = false;
-    }
 
 }
