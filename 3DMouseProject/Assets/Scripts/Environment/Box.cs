@@ -9,7 +9,7 @@ public class Box : MonoBehaviour {
 
     // The number of times a box can be hit before it is destroyed by the player
     public int hits = 1;
-
+ 
     // Called when a bullet from the player hits the box. Will "hurt" the box by 1 each time
     void OnCollisionEnter(Collision other)
     {
@@ -17,12 +17,16 @@ public class Box : MonoBehaviour {
         {
             hits--;
 
+
+            Quaternion keyRotation = Quaternion.Euler(new Vector3(-80.5f, -159.2f, 183.5f));
+            Vector3 keyPosition = new Vector3(transform.position.x, .5f, transform.position.z);
+
             if (hits == 0)
             {
                 // If an item is "inside" the box, spawn it
                 if (item != null)
                 {
-                    Instantiate(item, transform.position, Quaternion.identity);
+                    Instantiate(item, keyPosition, keyRotation);
                 }
                 Destroy(gameObject);
             }
