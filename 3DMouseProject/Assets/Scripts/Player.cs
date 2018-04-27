@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
     public static Player instance;
     public Renderer playerRenderer;
     public Material[] damageMaterials;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
     public bool invulnerable = false;
 
     public int maxHealth = 5;
@@ -41,7 +43,9 @@ public class Player : MonoBehaviour {
             HurtImage.instance.DisplayHurt(hurtTime);
             Die();
             return;
-        } 
+        }
+
+        AudioSource.PlayClipAtPoint(hurtSound, transform.position); // play sound clip
         CameraController.instance.ScreenShakeLight();
         if (invulnerable == true) {
             HurtImage.instance.DisplayHurt(hurtTime);
@@ -73,6 +77,7 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	public void Die ()
 	{
+        AudioSource.PlayClipAtPoint(deathSound, transform.position); // play sound clip
         CameraController.instance.ScreenShakeStrong();
 		Invoke ("Remove" , 1);
         GameManager.instance.RestartTheGameAfterSeconds(1);
