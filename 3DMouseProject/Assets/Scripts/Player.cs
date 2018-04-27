@@ -9,14 +9,21 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerController))]
 public class Player : MonoBehaviour {
 
-
-	public static Player instance;
+    public static Player instance;
     public int maxHealth = 5;
 	private int hitPoints = 5;
-	float lastHitTime = 0;
 
-	// Use this for initialization
-	void Awake () {
+    // All code regarding the injury coroutine has been borrowed and modified for reuse
+    // <copyright file="Player.cs" company="DIS Copenhagen">
+    // Copyright (c) 2017 All Rights Reserved
+    // </copyright>
+    // <author>Benno Lueders</author>
+    // <date>07/14/2017</date>
+    float hurtTimer = 0.1f;
+    Coroutine hurtRoutine;
+
+    // Use this for initialization
+    void Awake () {
 		instance = this;
         UIHealth.instance.UpdateLives(hitPoints);
 	}
@@ -28,21 +35,49 @@ public class Player : MonoBehaviour {
 
 	/// <summary>
 	/// Take away one hitpoint from the player. If the player's health is at 0, then the player will be removed.
+    /// The player will be invulnerable for hurtTimer time.
 	/// </summary>
 	public void Injure (){
-		if (Time.time >= lastHitTime + 3) {
-			hitPoints--;
-            UIHealth.instance.UpdateLives(hitPoints);
-			// Need some kind of blinking animation and sound here
-			if (hitPoints == 0) {
-				Die ();
-                return;
-            }
-            CameraController.instance.ScreenShakeLight();
-            lastHitTime = Time.time;
-		}
+		
+		hitPoints--;
+        UIHealth.instance.UpdateLives(hitPoints);
+
+        if (hitPoints == 0){
+            Die();
+            return;
+        }   
+
+        if (hurtRoutine != null){
+            StopCoroutine(hurtRoutine);
+        }
+        hurtRoutine = StartCoroutine(HurtRoutine());
+        CameraController.instance.ScreenShakeLight();
+		
 	}
 
+    // borrowed code
+    IEnumerator HurtRoutine()
+    {
+        float timer = 0;
+        bool blink = false;
+        while (timer < hurtTimer)
+        {
+            blink = !blink;
+            timer += Time.deltaTime;
+            if (blink)
+            {
+                Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.red;
+            }
+            else
+            {
+                Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
+            }
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        Player.instance.gameObject.GetComponent<Renderer>().material.color = Color.white;
+    }
+    // /borrowed code
 
     /// <summary>
     /// Should only be called by the Cheese script, where if the player's health is below 5, then one heart will be given back.
