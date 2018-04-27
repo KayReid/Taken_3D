@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public int health = 2;
+    public AudioClip hurtSound;
     // The amount of time the enemy should be shaking
     public float shakeTimeStandard = 0.2f;
     // The strength of the enemy shake
