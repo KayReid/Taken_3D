@@ -21,9 +21,6 @@ public class Player : MonoBehaviour {
     void Awake () {
 		instance = this;
         UIHealth.instance.UpdateLives(hitPoints);
-        playerRenderer = GetComponent<Renderer>();
-        playerRenderer.enabled = true;
-
 	}
 	
 	// Update is called once per frame
