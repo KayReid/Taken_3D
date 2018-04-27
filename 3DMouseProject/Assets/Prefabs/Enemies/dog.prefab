@@ -1445,10 +1445,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4097350828257908}
   - component: {fileID: 95655297333133540}
-  - component: {fileID: 135905942613852788}
   - component: {fileID: 195739360019572836}
   - component: {fileID: 114086333777598516}
   - component: {fileID: 114960804497275964}
+  - component: {fileID: 136025957156380492}
   m_Layer: 0
   m_Name: dog
   m_TagString: Untagged
@@ -18722,7 +18722,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079884152591088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.035606, y: 3.2789365e-18, z: 13.607535}
+  m_LocalPosition: {x: 1.1762748, y: 0.00004386902, z: 31.052677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4172002793100730}
@@ -33580,8 +33580,8 @@ MonoBehaviour:
   hurtSound: {fileID: 8300000, guid: d1170eeacf6d52b45a322a6f8604f449, type: 3}
   shakeTimeStandard: 0.2
   shakeStrengthStandard: 0.3
---- !u!135 &135905942613852788
-SphereCollider:
+--- !u!136 &136025957156380492
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -33589,9 +33589,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.4784968
-  m_Center: {x: -0.008625507, y: 0.89912844, z: 0.048742533}
+  m_Radius: 0.77556777
+  m_Height: 2.9985352
+  m_Direction: 2
+  m_Center: {x: 0.0321002, y: 0.9058294, z: -0.08327484}
 --- !u!137 &137692250495653402
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
