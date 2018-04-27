@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23090742793162380}
   - component: {fileID: 64965015971518486}
   - component: {fileID: 208998244094136690}
+  - component: {fileID: 114442754101517790}
   m_Layer: 0
   m_Name: Crate_004
   m_TagString: Untagged
@@ -100,6 +101,21 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300032, guid: fe8bb5221257840c2805e380fc94544a, type: 3}
+--- !u!114 &114442754101517790
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1021327707795386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b288909d716f2c542a046e41cbdb77b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  hits: 1
+  shakeTimeStandard: 0.2
+  shakeStrengthStandard: 0.15
 --- !u!208 &208998244094136690
 NavMeshObstacle:
   m_ObjectHideFlags: 1
