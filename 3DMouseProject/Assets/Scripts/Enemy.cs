@@ -29,16 +29,21 @@ public class Enemy : MonoBehaviour {
             transform.position += shake;
             return;
         }
+		if (health <= 0) {
+			Destroy (gameObject);
+			EnemySpawn.instance.numEnemies--;
+		}
     }
 
 	// FIGURE  SHIT OUT
 	void OnCollisionStay(Collision other){
-		/*
+		
 		if (other.collider.GetComponent<Poop>()){
 			health--;
             shakeTimeRemaining = shakeTimeStandard;
         }
-        */
+
+
 		if (other.gameObject.tag == "Player" && Player.instance.invulnerable != true) {
 			Player.instance.Injure();
 		}

@@ -21,40 +21,22 @@ public class Poop : MonoBehaviour {
 
 
 	}
-	/*
+
 
 	// Will destroy an object if it is an enemy.
 	void OnColliderStay(Collision col)
 	{
-		if (col.collider.CompareTag("enemy"))
-		{
-			print ("hit");
-			col.collider.GetComponent<EnemyFollow> ().Hurt ();
-			Destroy (gameObject);
-		}
-
-
+		
 	}
-	*/
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.collider.CompareTag ("enemy")) {
-			print ("hit");
-			Enemy enemy = col.collider.GetComponent<Enemy> ();
-			enemy.health--;
-			if (enemy.health <= 0) {
-				Destroy (gameObject);
-				EnemySpawn.instance.numEnemies--;
-			}
-			enemy.shakeTimeRemaining = enemy.shakeTimeStandard;
-			Destroy (gameObject);
-		} else {
-			print ("hit something else");
-			Destroy (gameObject);
-		}
+
+
 
 	}
+
+
 
 	IEnumerator KillAfterSeconds (float seconds)
 	{
