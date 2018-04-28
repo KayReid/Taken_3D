@@ -8452,12 +8452,12 @@ MonoBehaviour:
     - 'Liam
 
 
-      How do we find this canon?'
+      How do we find this cannon?'
     - 'Maggie
 
 
       There are 5 canon parts that we need to collect. Once we collect all of them,
-      we can assemble the canon to blast down the Main Exit.'
+      we can assemble the cannon to blast down the Main Exit.'
     - 'Liam
 
 
@@ -16137,6 +16137,10 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 244591796}
+    - target: {fileID: 1140925695564892, guid: 4c03ebd347ac643cbb131b94c257259d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c03ebd347ac643cbb131b94c257259d, type: 2}
   m_IsPrefabParent: 0
@@ -21966,7 +21970,7 @@ MonoBehaviour:
 
       q
 
-      Hmm.. I need to find the all of the canon pieces to blast this door...'
+      Hmm.. I need to find the all of the cannon pieces to blast this door...'
   cannonShootingSoundClip: {fileID: 8300000, guid: 30fb83451d30142c8bad6207b363c763,
     type: 3}
 --- !u!4 &1419619476 stripped
@@ -32091,7 +32095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2089058345
 RectTransform:
   m_ObjectHideFlags: 0
