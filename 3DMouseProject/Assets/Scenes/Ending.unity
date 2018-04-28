@@ -274,7 +274,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434518896
 MonoBehaviour:
@@ -288,9 +288,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   page:
-  - We just escaped!
-  - Hahahah
-  - good
+  - I WAS ABLE TO SAVE MY DAUGHTER
+  - NOW IT'S TIME FOR US TO TAKE A REVENGE AGAINST HUMANS...
+  - I DON'T KNOW WHO YOU ARE
+  - BUT I WILL FIND YOU
+  - I WILL KIM YOU
+  - TO BE CONTINUED...
   levelToLoad: MainMenu
 --- !u!114 &1434518897
 MonoBehaviour:

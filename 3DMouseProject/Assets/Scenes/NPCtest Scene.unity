@@ -21130,7 +21130,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 12.1
+      value: 14.07
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalPosition.y
@@ -21138,7 +21138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 39.6
+      value: 37.63
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalRotation.x
@@ -21192,7 +21192,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalScale.z
-      value: 2.2
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -22050,7 +22050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420257897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23769,6 +23769,40 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9eb8ff3d383e84ffbb7680bb98432641, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1552932670 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1461398091534032, guid: 95e15676e120f4bb1b35af5bd2b91270,
+    type: 2}
+  m_PrefabInternal: {fileID: 1675409404}
+--- !u!114 &1552932671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1552932670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af98a851767304fd3adcd1071f008888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'Liam
+
+
+      I hear some noise coming from the left'
+    - 'Liam
+
+
+      Could it be my daughter?'
+  halfDoorLeftTransform: {fileID: 1675409406}
+  halfDoorRightTransform: {fileID: 1675409407}
+  slideDistance: 1.3
+  speed: 1
+  doorOpeningSoundClip: {fileID: 8300000, guid: 80d08fa5dccc64ffa90d6734ce03512e,
+    type: 3}
+  doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
+    type: 3}
 --- !u!1001 &1553170360
 Prefab:
   m_ObjectHideFlags: 0
@@ -26316,7 +26350,8 @@ Prefab:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114409949165894262, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1675409405 stripped

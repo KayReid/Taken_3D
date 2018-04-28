@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StoryTelling : MonoBehaviour {
 
-
 	[TextArea (4, 30)]
 	public string[] page;
 	int PageNumber = -1;
 	Text view;
 	public string levelToLoad;
-
 
 	// Use this for initialization
 	void Start () {
@@ -34,13 +32,23 @@ public class StoryTelling : MonoBehaviour {
 	void PageTurn() {
 		PageNumber++;
 		if (PageNumber < page.Length) {
-			view.text = page [PageNumber];
+			StartCoroutine (TypingSentence (page [PageNumber]));
+			// view.text = page [PageNumber];
 
 		} else {
 			SceneManager.LoadScene(levelToLoad);
 		}
 
 	}
+
+	IEnumerator TypingSentence (string sentence){
+		view.text = "";
+		foreach (char letter in sentence.ToCharArray()) {
+			view.text += letter;
+			yield return null;
+		}
+
+	}
+
+
 }
-
-
