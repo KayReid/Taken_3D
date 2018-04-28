@@ -54,7 +54,7 @@ public class ExitDoor : MonoBehaviour {
 	void destroyExit () {
 		Debug.Log("Destroy the Exit");
 		Destroy (gameObject);
-		SceneManager.LoadScene ("ScEnding");
+		SceneManager.LoadScene ("Ending");
 	}
 
 }
