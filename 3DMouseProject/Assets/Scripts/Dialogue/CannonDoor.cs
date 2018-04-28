@@ -57,7 +57,7 @@ public class CannonDoor : MonoBehaviour {
 
 	}
 
-	
+	/*
 	void OnTriggerEnter(Collider other) {
 
 		if (status != DoorStatus.Animating) {
@@ -72,10 +72,11 @@ public class CannonDoor : MonoBehaviour {
 			}
 		}
 	}
+	*/
 	
 
 
-	/* Edit this later with 5 canon parts
+	// Edit this later with 5 canon parts
 	void OnTriggerEnter(Collider other) {
 		
 		if (other.CompareTag ("Player")) {
@@ -84,7 +85,7 @@ public class CannonDoor : MonoBehaviour {
 		}
 
 	}
-	*/
+
 
 
 

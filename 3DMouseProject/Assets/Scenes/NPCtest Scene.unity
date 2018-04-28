@@ -22097,21 +22097,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1419619471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Script: {fileID: 11500000, guid: a669e03bdf56d4641a37628f4b62de50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canonDoorPrefab: {fileID: 1417287520806990, guid: 6a01bbacb8c43453b9efb6188b631ab2,
+    type: 2}
   dialogue:
-    sentences:
-    - I need to find the key first
-  wife: {fileID: 0}
+    sentences: []
   halfDoorLeftTransform: {fileID: 1419619469}
   halfDoorRightTransform: {fileID: 1419619470}
   slideDistance: 1.3
   speed: 1
-  doorOpeningSoundClip: {fileID: 8300000, guid: 80d08fa5dccc64ffa90d6734ce03512e,
-    type: 3}
-  doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
-    type: 3}
+  doorOpeningSoundClip: {fileID: 0}
+  doorClosingSoundClip: {fileID: 0}
 --- !u!1 &1420257896
 GameObject:
   m_ObjectHideFlags: 0
@@ -22128,7 +22126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420257897
 MonoBehaviour:
   m_ObjectHideFlags: 0
