@@ -23,7 +23,7 @@ public class ExitDoor : MonoBehaviour {
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Canon.canonCounter == 5) {
+					if (Cannon.cannonCounter == 5) {
 						StartCoroutine(spawnCanon());
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);

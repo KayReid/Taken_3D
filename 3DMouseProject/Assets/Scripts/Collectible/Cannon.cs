@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon : MonoBehaviour{
+public class Cannon : MonoBehaviour{
 
-	public static int canonCounter;
+	public static int cannonCounter;
     public AudioClip collectSound;
     /// <summary>
     /// If touched by player, will be destroyed by impact and "added" to UI. Used to win the game.
@@ -15,6 +15,7 @@ public class Canon : MonoBehaviour{
             UICollectible.instance.UpdateInventory(this.gameObject); // Update UI
             AudioSource.PlayClipAtPoint(collectSound, transform.position); // play sound clip
             Destroy(this.gameObject);
+			cannonCounter++;
         }
     }
 
