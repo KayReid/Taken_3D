@@ -22210,7 +22210,6 @@ MonoBehaviour:
   halfDoorLeftTransform: {fileID: 1419619469}
   halfDoorRightTransform: {fileID: 1419619470}
   slideDistance: 1.3
-  speed: 1
 --- !u!1 &1420257896
 GameObject:
   m_ObjectHideFlags: 0
