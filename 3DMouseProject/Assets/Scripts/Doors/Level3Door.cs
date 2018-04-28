@@ -4,8 +4,9 @@ using UnityEngine;
 
 
 
+// Door that will be opened when rescue a daughter
 
-public class KeyDoor : MonoBehaviour {
+public class Level3Door : MonoBehaviour {
 
 
 	private DoorStatus status = DoorStatus.Closed;
@@ -63,9 +64,8 @@ public class KeyDoor : MonoBehaviour {
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Key.keyActivated) {
+					if (Level2Door.rescuedDaughter) {
 						StartCoroutine (OpenDoors ());
-						wife.transform.parent = transform;
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
 					}

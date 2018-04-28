@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-public class CannonDoor : MonoBehaviour {
+// Door that will be opened when all the cannon pieces are collected
+public class ExitDoor : MonoBehaviour {
 
 
 	private DoorStatus status = DoorStatus.Closed;
@@ -20,33 +20,6 @@ public class CannonDoor : MonoBehaviour {
 
 	[SerializeField]
 	private float slideDistance	= 1.3f;		//	Sliding distance to open each panel the door
-
-	private Vector3 leftDoorClosedPosition;
-	private Vector3 leftDoorOpenPosition;
-
-	private Vector3 rightDoorClosedPosition;
-	private Vector3 rightDoorOpenPosition;
-
-	[SerializeField]
-	private float speed = 1f;					//	Speed for opening and closing the door
-
-
-
-	// Use this for initialization
-	void Start () {
-		leftDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
-		leftDoorOpenPosition	= new Vector3 (0f, 0f, slideDistance);
-
-		rightDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
-		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
-
-	}
-
-	// Update is called once per frame
-	void Update () {
-
-
-	}
 
 
 	void OnTriggerEnter(Collider other) {
