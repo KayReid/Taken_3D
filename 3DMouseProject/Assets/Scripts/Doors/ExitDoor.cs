@@ -16,7 +16,6 @@ public class ExitDoor : MonoBehaviour {
 	[SerializeField]
 	private AudioClip cannonShootingSoundClip;
 
-	private AudioSource audioSource;
 
 	void OnTriggerEnter(Collider other) {
 
@@ -38,20 +37,22 @@ public class ExitDoor : MonoBehaviour {
 		Debug.Log("Waiting 1 second to spawn canon");
 		yield return new WaitForSeconds(1f);
 		Debug.Log("Canon instantiated");
-		Instantiate(cannonPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
-		shootCanon();
+		Instantiate(cannonPrefab, new Vector3(22.2f, 1.9f, 107.4f), Quaternion.Euler(0, 45, 0));
+		StartCoroutine(shootCanon());
 	}
 		
 
-	void shootCanon () {
+	IEnumerator shootCanon () {
 		Debug.Log("Shooting cannon ball");
+		yield return new WaitForSeconds(3f);
 		if (cannonShootingSoundClip != null) {
-			audioSource.PlayOneShot (cannonShootingSoundClip, 0.7F);
+			AudioSource.PlayClipAtPoint(cannonShootingSoundClip, transform.position); // play sound clip
 		}
-		destroyExit ();
+		StartCoroutine(destroyExit ());
 	}
 
-	void destroyExit () {
+	IEnumerator destroyExit () {
+		yield return new WaitForSeconds(1f);
 		Debug.Log("Destroy the Exit");
 		Destroy (gameObject);
 		SceneManager.LoadScene ("Ending");

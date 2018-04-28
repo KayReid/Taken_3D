@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour{
 
-	public static int cannonCounter;
+	public static int cannonCounter = 5; // change
     public AudioClip collectSound;
     /// <summary>
     /// If touched by player, will be destroyed by impact and "added" to UI. Used to win the game.

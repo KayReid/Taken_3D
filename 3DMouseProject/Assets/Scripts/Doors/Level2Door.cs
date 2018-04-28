@@ -52,8 +52,8 @@ public class Level2Door : MonoBehaviour {
 
 		audioSource = GetComponent<AudioSource>();
 
-		rescuedDaughter = false;
-		foundDaughter = false;
+		rescuedDaughter = true; //change
+		foundDaughter = true; // change
 	}
 		
 	void OnTriggerEnter(Collider other) {
