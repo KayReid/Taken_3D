@@ -10,16 +10,7 @@ public class ExitDoor : MonoBehaviour {
 	private DoorStatus status = DoorStatus.Closed;
 	public GameObject cannonPrefab;
 
-
 	public Dialogue dialogue;
-
-	[SerializeField]
-	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
-	[SerializeField]
-	public Transform halfDoorRightTransform;	//	Right panel of the sliding door
-
-	[SerializeField]
-	private float slideDistance	= 1.3f;		//	Sliding distance to open each panel the door
 
 	[SerializeField]
 	private AudioClip cannonShootingSoundClip;
