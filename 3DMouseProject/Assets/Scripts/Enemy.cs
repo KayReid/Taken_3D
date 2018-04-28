@@ -13,11 +13,10 @@ public class Enemy : MonoBehaviour {
 
     public float shakeTimeRemaining;
 
-	public static Enemy instance;
 
     // Use this for initialization
     void Start () {
-		instance = this;
+
 	}
 	
 	// Update is called once per frame
@@ -31,24 +30,20 @@ public class Enemy : MonoBehaviour {
         }
 		if (health <= 0) {
 			Destroy (gameObject);
-			EnemySpawn.instance.numEnemies--;
+
 		}
     }
 
-	// FIGURE  SHIT OUT
-	void OnCollisionStay(Collision other){
-		
-		if (other.collider.GetComponent<Poop>()){
-			health--;
-            shakeTimeRemaining = shakeTimeStandard;
-        }
 
+	void OnCollisionStay(Collision other){
 
 		if (other.gameObject.tag == "Player" && Player.instance.invulnerable != true) {
 			Player.instance.Injure();
 		}
 
 	}
+
+
 
 }
 	

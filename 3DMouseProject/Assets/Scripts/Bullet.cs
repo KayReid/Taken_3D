@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poop : MonoBehaviour {
+public class Bullet : MonoBehaviour {
     
 	public float lifeTime = 2f; // After how many seconds is the shit destroyed
 	public float shitSpeed = 50f;
@@ -21,16 +21,18 @@ public class Poop : MonoBehaviour {
 
 
 	}
-
-
-	// Will destroy an object if it is an enemy.
-	void OnColliderStay(Collision col)
-	{
 		
-	}
 
 	void OnCollisionEnter(Collision col)
 	{
+		if (col.collider.GetComponent<Enemy> ()) {
+			Enemy enemy = col.collider.GetComponent<Enemy> ();
+			enemy.health--;
+			enemy.shakeTimeRemaining = enemy.shakeTimeStandard;
+			Destroy (gameObject);
+		} else {
+			Destroy (gameObject);
+		}
 
 
 

@@ -10,7 +10,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public static Player instance;
-    public Renderer playerRenderer;
     public Material[] damageMaterials;
     public AudioClip hurtSound;
     public AudioClip deathSound;
@@ -23,7 +22,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Awake () {
 		instance = this;
-        UIHealth.instance.UpdateLives(hitPoints);
+		UIHealth.instance.UpdateLives(hitPoints);
 	}
 	
 	// Update is called once per frame

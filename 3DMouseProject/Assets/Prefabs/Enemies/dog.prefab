@@ -24344,7 +24344,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1067947343583494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.818377, y: 0.00006580353, z: 48.07589}
+  m_LocalPosition: {x: -14.441795, y: 0.00006580353, z: 64.622765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388049659458136}
@@ -33590,10 +33590,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.9007335
+  m_Radius: 0.90062666
   m_Height: 3.1240234
   m_Direction: 2
-  m_Center: {x: 0.013516426, y: 1.1439352, z: -0.04111862}
+  m_Center: {x: -0.051595688, y: 0.9053793, z: -0.04111862}
 --- !u!137 &137642609215186676
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -34417,6 +34417,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
