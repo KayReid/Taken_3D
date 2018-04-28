@@ -21,12 +21,8 @@ public class Player : MonoBehaviour {
 	private int hitPoints = 5;
     private float hurtTime = 2f;
 
-	public Dialogue dialogue;
-
     // Use this for initialization
     void Awake () {
-		Debug.Log("start dialogue");
-
 		instance = this;
 	}
 	

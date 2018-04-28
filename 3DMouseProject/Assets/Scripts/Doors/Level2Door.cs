@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+// Door that will be opened when find a key
+public class Level2Door : MonoBehaviour {
 
-public class CannonDoor : MonoBehaviour {
-
-
+	// public static Level2Door instance; 
 	private DoorStatus status = DoorStatus.Closed;
-	public GameObject canonDoorPrefab;
 
-
+	public static bool rescuedDaughter;
+	public static bool foundDaughter;
 	public Dialogue dialogue;
 
 	[SerializeField]
@@ -31,33 +31,41 @@ public class CannonDoor : MonoBehaviour {
 	private float speed = 1f;					//	Speed for opening and closing the door
 
 
+	//	Sound Fx
+	[SerializeField]
+	private AudioClip doorOpeningSoundClip;
+	[SerializeField]
+	public AudioClip doorClosingSoundClip;
+
+	private AudioSource audioSource;
+
 
 	// Use this for initialization
 	void Start () {
+		// instance = this;
 		leftDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
 		leftDoorOpenPosition	= new Vector3 (0f, 0f, slideDistance);
 
 		rightDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
 		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
 
+		audioSource = GetComponent<AudioSource>();
+
+		rescuedDaughter = false;
+		foundDaughter = false;
 	}
-
-	// Update is called once per frame
-	void Update () {
-
-
-	}
-
-
+		
 	void OnTriggerEnter(Collider other) {
 
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Canon.canonCounter == 5) {
-						StartCoroutine(spawnCanon(1f));
+					if (Key.keyActivated) {
+						StartCoroutine (OpenDoors ());
+						rescuedDaughter = true;
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
+						foundDaughter = true;
 					}
 				}
 			}
@@ -65,11 +73,28 @@ public class CannonDoor : MonoBehaviour {
 	}
 
 
-	IEnumerator spawnCanon(float seconds) {
-		Debug.Log("Waiting 3 seconds to spawn canon");
-		yield return new WaitForSeconds(seconds);
-		Debug.Log("Canon instantiated");
-		Instantiate(canonDoorPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
+	IEnumerator OpenDoors () {
+
+		if (doorOpeningSoundClip != null) {
+			audioSource.PlayOneShot (doorOpeningSoundClip, 0.7F);
+		}
+
+		status = DoorStatus.Animating;
+
+		float t = 0f;
+
+		while (t < 1f) {
+			t += Time.deltaTime * speed;
+
+			halfDoorLeftTransform.localPosition = Vector3.Slerp(leftDoorClosedPosition, leftDoorOpenPosition, t);
+			halfDoorRightTransform.localPosition = Vector3.Slerp(rightDoorClosedPosition, rightDoorOpenPosition, t);
+
+			yield return null;
+		}
+
+
+		status = DoorStatus.Open;
+
 	}
 		
 
