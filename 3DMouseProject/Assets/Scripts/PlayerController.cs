@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		laserline = GetComponent<LineRenderer> ();
 		rb = GetComponent<Rigidbody> ();
 		coll = GetComponent<Collider> ();

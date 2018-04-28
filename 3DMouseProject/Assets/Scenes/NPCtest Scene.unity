@@ -8695,13 +8695,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 510210384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Script: {fileID: 11500000, guid: 163738bb0219e4be8971f08feb0a58fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - I need to find the key first
-  wife: {fileID: 0}
   halfDoorLeftTransform: {fileID: 510210382}
   halfDoorRightTransform: {fileID: 510210381}
   slideDistance: 1.3
@@ -13279,20 +13275,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 839120403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Script: {fileID: 11500000, guid: 163738bb0219e4be8971f08feb0a58fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - 'I need to find the key first
-
-'
-  wife: {fileID: 0}
   halfDoorLeftTransform: {fileID: 839120401}
   halfDoorRightTransform: {fileID: 839120400}
   slideDistance: 1.3
   speed: 1
-  doorOpeningSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
+  doorOpeningSoundClip: {fileID: 8300000, guid: 80d08fa5dccc64ffa90d6734ce03512e,
     type: 3}
   doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
     type: 3}
@@ -13785,13 +13775,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 864443811}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Script: {fileID: 11500000, guid: 163738bb0219e4be8971f08feb0a58fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - I need find the key first
-  wife: {fileID: 0}
   halfDoorLeftTransform: {fileID: 864443809}
   halfDoorRightTransform: {fileID: 864443808}
   slideDistance: 1.3
@@ -14528,13 +14514,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 908832330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Script: {fileID: 11500000, guid: 163738bb0219e4be8971f08feb0a58fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    sentences:
-    - I need to find the key first
-  wife: {fileID: 0}
   halfDoorLeftTransform: {fileID: 908832328}
   halfDoorRightTransform: {fileID: 908832327}
   slideDistance: 1.3
@@ -21384,6 +21366,127 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 162bbb86efec240b396abff4e93b705a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1370967200
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 12.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.3749199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 39.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.9238796
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114409949165894262, guid: 95e15676e120f4bb1b35af5bd2b91270,
+        type: 2}
+      propertyPath: halfDoorLeftTransform
+      value: 
+      objectReference: {fileID: 1370967202}
+    - target: {fileID: 114409949165894262, guid: 95e15676e120f4bb1b35af5bd2b91270,
+        type: 2}
+      propertyPath: halfDoorRightTransform
+      value: 
+      objectReference: {fileID: 1370967203}
+    - target: {fileID: 0}
+      propertyPath: halfDoorLeftTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: halfDoorRightTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461398091534032, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_Name
+      value: KeyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114409949165894262, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1370967202 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4772205817355078, guid: 95e15676e120f4bb1b35af5bd2b91270,
+    type: 2}
+  m_PrefabInternal: {fileID: 1370967200}
+--- !u!4 &1370967203 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4134764573031676, guid: 95e15676e120f4bb1b35af5bd2b91270,
+    type: 2}
+  m_PrefabInternal: {fileID: 1370967200}
+--- !u!1 &1370967204 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1461398091534032, guid: 95e15676e120f4bb1b35af5bd2b91270,
+    type: 2}
+  m_PrefabInternal: {fileID: 1370967200}
+--- !u!114 &1370967205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370967204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0829769915ac5484da40f808a2321165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - 'I need to find the key first
+
+'
+  wife: {fileID: 0}
+  halfDoorLeftTransform: {fileID: 1370967202}
+  halfDoorRightTransform: {fileID: 1370967203}
+  slideDistance: 1.3
+  speed: 1
+  doorOpeningSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
+    type: 3}
+  doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
+    type: 3}
 --- !u!1 &1372482607
 GameObject:
   m_ObjectHideFlags: 0
@@ -22108,8 +22211,6 @@ MonoBehaviour:
   halfDoorRightTransform: {fileID: 1419619470}
   slideDistance: 1.3
   speed: 1
-  doorOpeningSoundClip: {fileID: 0}
-  doorClosingSoundClip: {fileID: 0}
 --- !u!1 &1420257896
 GameObject:
   m_ObjectHideFlags: 0
@@ -22126,7 +22227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420257897
 MonoBehaviour:
   m_ObjectHideFlags: 0

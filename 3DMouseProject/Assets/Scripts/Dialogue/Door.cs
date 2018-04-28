@@ -13,7 +13,6 @@ public enum DoorStatus {
 
 public class Door : MonoBehaviour {
 
-
 	private DoorStatus status = DoorStatus.Closed;
 
 	[SerializeField]

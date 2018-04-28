@@ -11,7 +11,7 @@ public class Player : MonoBehaviour {
 
     public static Player instance;
 
-	public Dialogue dialogue;
+
     public Material[] damageMaterials;
     public AudioClip hurtSound;
     public AudioClip deathSound;
@@ -21,11 +21,11 @@ public class Player : MonoBehaviour {
 	private int hitPoints = 5;
     private float hurtTime = 2f;
 
+	public Dialogue dialogue;
+
     // Use this for initialization
     void Awake () {
 		Debug.Log("start dialogue");
-
-		FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
 
 		instance = this;
 	}
