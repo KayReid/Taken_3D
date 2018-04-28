@@ -13,8 +13,6 @@ public class Level3Door : MonoBehaviour {
 
 	public Dialogue dialogue;
 
-	public GameObject wife;
-
 	[SerializeField]
 	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
 	[SerializeField]

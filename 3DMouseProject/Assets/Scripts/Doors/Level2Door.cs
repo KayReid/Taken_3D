@@ -11,7 +11,8 @@ public class Level2Door : MonoBehaviour {
 
 	public static bool rescuedDaughter;
 	public static bool foundDaughter;
-	public Dialogue dialogue;
+	public Dialogue pre_dialogue;
+	public Dialogue post_dialogue;
 
 	[SerializeField]
 	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
@@ -62,9 +63,10 @@ public class Level2Door : MonoBehaviour {
 				if (other.CompareTag ("Player")) {
 					if (Key.keyActivated) {
 						StartCoroutine (OpenDoors ());
+						FindObjectOfType<DialogueManager> ().StartDialogue (post_dialogue);
 						rescuedDaughter = true;
 					} else {
-						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
+						FindObjectOfType<DialogueManager> ().StartDialogue (pre_dialogue);
 						foundDaughter = true;
 					}
 				}
