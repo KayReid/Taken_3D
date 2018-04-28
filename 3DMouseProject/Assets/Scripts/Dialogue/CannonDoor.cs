@@ -31,14 +31,6 @@ public class CannonDoor : MonoBehaviour {
 	private float speed = 1f;					//	Speed for opening and closing the door
 
 
-	//	Sound Fx
-	[SerializeField]
-	private AudioClip doorOpeningSoundClip;
-	[SerializeField]
-	public AudioClip doorClosingSoundClip;
-
-	private AudioSource audioSource;
-
 
 	// Use this for initialization
 	void Start () {
@@ -48,7 +40,6 @@ public class CannonDoor : MonoBehaviour {
 		rightDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
 		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
 
-		audioSource = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -57,14 +48,14 @@ public class CannonDoor : MonoBehaviour {
 
 	}
 
-	/*
+
 	void OnTriggerEnter(Collider other) {
 
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
 					if (Canon.canonCounter == 5) {
-						StartCoroutine (OpenDoors ());
+						StartCoroutine(spawnCanon(1f));
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
 					}
@@ -72,94 +63,15 @@ public class CannonDoor : MonoBehaviour {
 			}
 		}
 	}
-	*/
-	
 
 
-	// Edit this later with 5 canon parts
-	void OnTriggerEnter(Collider other) {
-		
-		if (other.CompareTag ("Player")) {
-			Debug.Log("Door: Player Collided");
-			StartCoroutine(spawnCanon(3f));
-		}
-
-	}
-
-
-
-
-	void OnTriggerExit(Collider other) {
-
-		if (status != DoorStatus.Animating) {
-			if (status == DoorStatus.Open) {
-				if (other.CompareTag ("Player")) {
-					StartCoroutine (CloseDoors ());
-				}
-			}
-		}
-	}
-
-	IEnumerator OpenDoors () {
-
-		if (doorOpeningSoundClip != null) {
-			audioSource.PlayOneShot (doorOpeningSoundClip, 0.7F);
-		}
-
-		status = DoorStatus.Animating;
-
-		float t = 0f;
-
-		while (t < 1f) {
-			t += Time.deltaTime * speed;
-
-			halfDoorLeftTransform.localPosition = Vector3.Slerp(leftDoorClosedPosition, leftDoorOpenPosition, t);
-			halfDoorRightTransform.localPosition = Vector3.Slerp(rightDoorClosedPosition, rightDoorOpenPosition, t);
-
-			yield return null;
-		}
-		status = DoorStatus.Open;
-		StartCoroutine(spawnCanon(2f));
-		// TODO: Plays Animation and then destroy canon prefab
-		// Player exits
-
-	}
-
-	/*	Transform of a canon for the main door:
-  		Position: 3.5 4.0 67.5
-  		Rotation: 0 45 0
- 	*/
 	IEnumerator spawnCanon(float seconds) {
 		Debug.Log("Waiting 3 seconds to spawn canon");
 		yield return new WaitForSeconds(seconds);
 		Debug.Log("Canon instantiated");
-		Instantiate(canonDoorPrefab, new Vector3(3.5f, 4.0f, 67.5f), Quaternion.Euler(0, 45, 0));
+		Instantiate(canonDoorPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
 	}
-
-	IEnumerator CloseDoors () {
-
-		if (doorClosingSoundClip != null) {
-			audioSource.PlayOneShot(doorClosingSoundClip, 0.7F);
-		}
-
-		status = DoorStatus.Animating;
-
-		float t = 0f;
-
-		while (t < 1f) {
-			t += Time.deltaTime * speed;
-
-			halfDoorLeftTransform.localPosition = Vector3.Slerp(leftDoorOpenPosition, leftDoorClosedPosition, t);
-			halfDoorRightTransform.localPosition = Vector3.Slerp(rightDoorOpenPosition, rightDoorClosedPosition, t);
-
-			yield return null;
-		}
-
-		status = DoorStatus.Closed;
-
-	}
-
-
+		
 
 }
 
