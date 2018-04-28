@@ -31,7 +31,9 @@ public class CameraController : MonoBehaviour {
 
     private void Awake()
     {
-        offset = transform.position - target.transform.position;
+		if (target.gameObject.activeInHierarchy) {
+			offset = transform.position - target.transform.position;
+		}
         instance = this;
     }
 

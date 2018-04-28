@@ -78,7 +78,6 @@ public class Player : MonoBehaviour {
 	{
         AudioSource.PlayClipAtPoint(deathSound, transform.position); // play sound clip
         CameraController.instance.ScreenShakeStrong();
-		Invoke ("Remove" , 1);
         GameManager.instance.RestartTheGameAfterSeconds(1);
 		// Need some kind of death animation and sound here]
 	}

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23015273704698100}
   - component: {fileID: 114098581234642956}
   - component: {fileID: 65550756948388430}
+  - component: {fileID: 208636069494535576}
   m_Layer: 0
   m_Name: Broken Glass 1
   m_TagString: Untagged
@@ -108,3 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a85914de4c3864abf0d25c2dfaa5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!208 &208636069494535576
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1859287975780560}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.35, y: 0.15, z: 0.70000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
