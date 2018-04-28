@@ -24,28 +24,31 @@ public class NPC : MonoBehaviour {
 		else{
 			SetDestination();
 		}
+
+		_navMeshagent.autoTraverseOffMeshLink = false;
 	}
 
-	void Update () {
+	/** void Update () {
 		SetDestination ();
 	}
+	**/
 
 	private void SetDestination(){
 		if(_destination != null){
 			Vector3 targetVector = _destination.transform.position;
 
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 3){
-				_navMeshagent.Stop();
+				_navMeshagent.isStopped = true;
 				aiAnimator.SetBool("aiIsWalking", false);
 			} else {
-				_navMeshagent.Resume();
+				_navMeshagent.isStopped = false;
 				aiAnimator.SetBool("aiIsWalking", true);
 			}
 
 
 			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) >= 20) {
 				// MAKE THE ENEMY WONDER AWAY? JUST STOPS NOW
-				_navMeshagent.Stop();
+				_navMeshagent.isStopped = true;
 				aiAnimator.SetBool("aiIsWalking", false);
 			}
 

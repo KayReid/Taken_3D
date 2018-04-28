@@ -8,19 +8,14 @@ public class ExitDoor : MonoBehaviour {
 
 
 	private DoorStatus status = DoorStatus.Closed;
-	public GameObject canonDoorPrefab;
-
+	public GameObject cannonPrefab;
 
 	public Dialogue dialogue;
 
 	[SerializeField]
-	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
-	[SerializeField]
-	public Transform halfDoorRightTransform;	//	Right panel of the sliding door
+	private AudioClip cannonShootingSoundClip;
 
-	[SerializeField]
-	private float slideDistance	= 1.3f;		//	Sliding distance to open each panel the door
-
+	private AudioSource audioSource;
 
 	void OnTriggerEnter(Collider other) {
 
@@ -28,7 +23,7 @@ public class ExitDoor : MonoBehaviour {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
 					if (Canon.canonCounter == 5) {
-						StartCoroutine(spawnCanon(1f));
+						StartCoroutine(spawnCanon());
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
 					}
@@ -38,13 +33,30 @@ public class ExitDoor : MonoBehaviour {
 	}
 
 
-	IEnumerator spawnCanon(float seconds) {
+	IEnumerator spawnCanon() {
 		Debug.Log("Waiting 3 seconds to spawn canon");
-		yield return new WaitForSeconds(seconds);
+		yield return new WaitForSeconds(1f);
 		Debug.Log("Canon instantiated");
-		Instantiate(canonDoorPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
+		Instantiate(cannonPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
+		StartCoroutine(shootCanon());
 	}
 		
+
+	IEnumerator shootCanon() {
+		Debug.Log("Shooting Cannon in 1 second");
+		yield return new WaitForSeconds(1f);
+		Debug.Log("Shooting cannon ball");
+		if (cannonShootingSoundClip != null) {
+			audioSource.PlayOneShot (cannonShootingSoundClip, 0.7F);
+		}
+		StartCoroutine (destroyExit ());
+	}
+
+	IEnumerator destroyExit() {
+		yield return new WaitForSeconds(0.2f);
+		Debug.Log("Destroy the Exit");
+		Destroy (gameObject);
+	}
 
 }
 
