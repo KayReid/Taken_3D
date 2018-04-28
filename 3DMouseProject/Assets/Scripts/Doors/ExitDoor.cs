@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 // Door that will be opened when all the cannon pieces are collected
@@ -34,7 +35,7 @@ public class ExitDoor : MonoBehaviour {
 
 
 	IEnumerator spawnCanon() {
-		Debug.Log("Waiting 3 seconds to spawn canon");
+		Debug.Log("Waiting 1 second to spawn canon");
 		yield return new WaitForSeconds(1f);
 		Debug.Log("Canon instantiated");
 		Instantiate(cannonPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
@@ -56,6 +57,7 @@ public class ExitDoor : MonoBehaviour {
 		yield return new WaitForSeconds(0.2f);
 		Debug.Log("Destroy the Exit");
 		Destroy (gameObject);
+		SceneManager.LoadScene ("Ending");
 	}
 
 }
