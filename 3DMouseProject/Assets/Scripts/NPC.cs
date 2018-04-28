@@ -24,6 +24,8 @@ public class NPC : MonoBehaviour {
 		else{
 			SetDestination();
 		}
+
+		_navMeshagent.autoTraverseOffMeshLink = false;
 	}
 
 	void Update () {
