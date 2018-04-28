@@ -15,6 +15,7 @@ TagManager:
   - Pipe
   - Bomb
   - Stand
+  - MainDoor
   layers:
   - Default
   - TransparentFX
