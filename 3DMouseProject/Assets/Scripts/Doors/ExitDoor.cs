@@ -34,27 +34,24 @@ public class ExitDoor : MonoBehaviour {
 	}
 
 
-	IEnumerator spawnCanon() {
+	IEnumerator spawnCanon () {
 		Debug.Log("Waiting 1 second to spawn canon");
 		yield return new WaitForSeconds(1f);
 		Debug.Log("Canon instantiated");
 		Instantiate(cannonPrefab, new Vector3(23.4f, 2.2f, 122.0f), Quaternion.Euler(0, 45, 0));
-		StartCoroutine(shootCanon());
+		shootCanon();
 	}
 		
 
-	IEnumerator shootCanon() {
-		Debug.Log("Shooting Cannon in 1 second");
-		yield return new WaitForSeconds(1f);
+	void shootCanon () {
 		Debug.Log("Shooting cannon ball");
 		if (cannonShootingSoundClip != null) {
 			audioSource.PlayOneShot (cannonShootingSoundClip, 0.7F);
 		}
-		StartCoroutine (destroyExit ());
+		destroyExit ();
 	}
 
-	IEnumerator destroyExit() {
-		yield return new WaitForSeconds(0.2f);
+	void destroyExit () {
 		Debug.Log("Destroy the Exit");
 		Destroy (gameObject);
 		SceneManager.LoadScene ("Ending");
