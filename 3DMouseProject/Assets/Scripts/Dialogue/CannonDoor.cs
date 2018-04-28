@@ -8,6 +8,8 @@ public class CannonDoor : MonoBehaviour {
 
 
 	private DoorStatus status = DoorStatus.Closed;
+	public GameObject canonDoorPrefab;
+
 
 	public Dialogue dialogue;
 
@@ -55,6 +57,7 @@ public class CannonDoor : MonoBehaviour {
 
 	}
 
+	
 	void OnTriggerEnter(Collider other) {
 
 		if (status != DoorStatus.Animating) {
@@ -69,6 +72,21 @@ public class CannonDoor : MonoBehaviour {
 			}
 		}
 	}
+	
+
+
+	/* Edit this later with 5 canon parts
+	void OnTriggerEnter(Collider other) {
+		
+		if (other.CompareTag ("Player")) {
+			Debug.Log("Door: Player Collided");
+			StartCoroutine(spawnCanon(3f));
+		}
+
+	}
+	*/
+
+
 
 	void OnTriggerExit(Collider other) {
 
@@ -99,10 +117,22 @@ public class CannonDoor : MonoBehaviour {
 
 			yield return null;
 		}
-
-
 		status = DoorStatus.Open;
+		StartCoroutine(spawnCanon(2f));
+		// TODO: Plays Animation and then destroy canon prefab
+		// Player exits
 
+	}
+
+	/*	Transform of a canon for the main door:
+  		Position: 3.5 4.0 67.5
+  		Rotation: 0 45 0
+ 	*/
+	IEnumerator spawnCanon(float seconds) {
+		Debug.Log("Waiting 3 seconds to spawn canon");
+		yield return new WaitForSeconds(seconds);
+		Debug.Log("Canon instantiated");
+		Instantiate(canonDoorPrefab, new Vector3(3.5f, 4.0f, 67.5f), Quaternion.Euler(0, 45, 0));
 	}
 
 	IEnumerator CloseDoors () {
@@ -127,6 +157,8 @@ public class CannonDoor : MonoBehaviour {
 		status = DoorStatus.Closed;
 
 	}
+
+
 
 }
 
