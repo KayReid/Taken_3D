@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   breakSound: {fileID: 8300000, guid: 3a63a07a8638646719a62d7e393d121c, type: 3}
-  hits: 3
+  hits: 2
   shakeTimeStandard: 0.05
   shakeStrengthStandard: 0.2
 --- !u!208 &208998244094136690

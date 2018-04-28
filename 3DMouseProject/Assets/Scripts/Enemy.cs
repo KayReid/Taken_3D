@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour {
 
+    public Enemy instance;
+
 	public int health = 2;
     public AudioClip hurtSound;
     // The amount of time the enemy should be shaking
     public float shakeTimeStandard = 0.2f;
     // The strength of the enemy shake
-    public float shakeStrengthStandard = 0.15f;
+    public float shakeStrengthStandard = 0.2f;
 
     public float shakeTimeRemaining;
 
 
     // Use this for initialization
     void Start () {
-
+        instance = this;
 	}
 	
 	// Update is called once per frame
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour {
             return;
         }
 		if (health <= 0) {
-			Destroy (gameObject);
+            Destroy (gameObject);
 
 		}
     }

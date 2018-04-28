@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (KillAfterSeconds (lifeTime));
-        AudioSource.PlayClipAtPoint(shootSound, transform.position); // play sound clip
     }
 	
 	// Update is called once per frame
@@ -29,7 +28,8 @@ public class Bullet : MonoBehaviour {
 			Enemy enemy = col.collider.GetComponent<Enemy> ();
 			enemy.health--;
 			enemy.shakeTimeRemaining = enemy.shakeTimeStandard;
-			Destroy (gameObject);
+            AudioSource.PlayClipAtPoint(enemy.instance.hurtSound, transform.position); // play sound clip
+            Destroy (gameObject);
 		} else {
 			Destroy (gameObject);
 		}
