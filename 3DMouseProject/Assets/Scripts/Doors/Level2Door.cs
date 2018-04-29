@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 // Door that will be opened when find a key
 public class Level2Door : MonoBehaviour {
@@ -31,6 +31,7 @@ public class Level2Door : MonoBehaviour {
 	[SerializeField]
 	private float speed = 1f;					//	Speed for opening and closing the door
 
+	public NavMeshObstacle doorObstacle;
 
 	//	Sound Fx
 	[SerializeField]
@@ -54,6 +55,8 @@ public class Level2Door : MonoBehaviour {
 
 		rescuedDaughter = false; //change
 		foundDaughter = false; // change
+
+		doorObstacle = GetComponent<NavMeshObstacle>();
 	}
 		
 	void OnTriggerEnter(Collider other) {
@@ -65,6 +68,8 @@ public class Level2Door : MonoBehaviour {
 						StartCoroutine (OpenDoors ());
 						FindObjectOfType<DialogueManager> ().StartDialogue (post_dialogue);
 						rescuedDaughter = true;
+						Destroy (doorObstacle);
+
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (pre_dialogue);
 						foundDaughter = true;

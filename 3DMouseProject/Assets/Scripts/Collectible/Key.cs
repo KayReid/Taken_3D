@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour {
 
-    public static bool keyActivated; // changes
+    public static bool keyActivated = true; // changes
     public AudioClip collectSound;
 
     /// <summary>
