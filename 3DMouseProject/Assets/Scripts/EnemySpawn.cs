@@ -23,6 +23,7 @@ public class EnemySpawn : MonoBehaviour {
 		while (true) {
 
 			if (transform.childCount < 1) {
+				yield return new WaitForSeconds(Random.Range(5,10));
 				prefabIndex = UnityEngine.Random.Range(0,2);
 				// Vector3 spawnPosition = NavMeshAgent.Warp(transform.position);
 				Vector3 spawnPosition = transform.position;
@@ -31,7 +32,6 @@ public class EnemySpawn : MonoBehaviour {
 
 			}
 
-			yield return new WaitForSeconds(Random.Range(5,15));
 
 		}
 
