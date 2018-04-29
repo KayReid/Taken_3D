@@ -47,7 +47,7 @@ public class NPC : MonoBehaviour {
 		if (_destination != null && Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 20) {
 			Vector3 targetVector = _destination.transform.position;
 
-			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 3) {
+			if (Vector3.Distance (_destination.transform.position, _navMeshagent.transform.position) <= 2.5) {
 				_navMeshagent.isStopped = true;
 				aiAnimator.SetBool ("aiIsWalking", false);
 			} else {
