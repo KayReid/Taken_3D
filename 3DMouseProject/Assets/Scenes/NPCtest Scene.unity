@@ -9242,9 +9242,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pre_dialogue:
-    sentences: []
+    sentences:
+    - 'Maggie
+
+
+      Papa, how did you escape from your room?!'
+    - 'Liam
+
+
+      My room was somehow unlocked... Are you okay?! How can I get you out of here???'
+    - 'Maggie
+
+
+      I saw some humans across this room earlier, maybe there is a key to unlock this
+      door...'
+    - 'Liam
+
+
+      I will go find the key! Stay right here!'
+    - 'Maggie
+
+
+      Alright! Also, if you get hurt, there are some boxes that contain cheese for
+      you to recover'
   post_dialogue:
-    sentences: []
+    sentences:
+    - 'Maggie
+
+
+      Wow Papa! You did it!'
+    - 'Liam
+
+
+      Let''s get out here!'''
+    - 'Maggie
+
+
+      Wait Papa, the walls in this lab are immune to your bullets. However,I overheard
+      the humans talking about developing a nuclear cannon that can destroy anything!'
+    - 'Liam
+
+
+      How do we find this cannon?'
+    - 'Maggie
+
+
+      There are 5 canon parts that we need to collect. Once we collect all of them,
+      we can assemble the cannon to blast down the Main Exit.'
+    - 'Liam
+
+
+      Let''s break outta here!'
   halfDoorLeftTransform: {fileID: 487461855}
   halfDoorRightTransform: {fileID: 487461856}
   slideDistance: 1.3
@@ -23568,7 +23616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1420257897
 MonoBehaviour:
   m_ObjectHideFlags: 0
