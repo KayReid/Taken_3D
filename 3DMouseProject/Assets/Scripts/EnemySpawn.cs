@@ -11,7 +11,7 @@ public class EnemySpawn : MonoBehaviour {
 	List<GameObject> enemyList = new List<GameObject>();
 	int prefabIndex;
 
-	public float Timer = 7f;
+	public float Timer = 15f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class EnemySpawn : MonoBehaviour {
 				Vector3 spawnPosition = transform.position;
 				GameObject enemy = Instantiate (enemyList [prefabIndex], spawnPosition, Quaternion.identity);
 				enemy.transform.parent = gameObject.transform;
-				Timer = 7f;
+				Timer = 15f;
 			}
 		}
 	}

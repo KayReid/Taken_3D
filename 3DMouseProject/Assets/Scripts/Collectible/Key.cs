@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour {
 
-    public static bool keyActivated; // changes
+    public static bool keyActivated; 
     public AudioClip collectSound;
 
     /// <summary>
@@ -17,7 +17,6 @@ public class Key : MonoBehaviour {
             AudioSource.PlayClipAtPoint(collectSound, transform.position); // play sound clip
             Destroy(this.gameObject); // Destroy this key object
             keyActivated = true;
-            Debug.Log("Player hit!, Key is activated for the door");
         }
     }
 }

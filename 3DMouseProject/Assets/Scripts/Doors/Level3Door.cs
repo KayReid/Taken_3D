@@ -65,7 +65,7 @@ public class Level3Door : MonoBehaviour {
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Level2Door.rescuedDaughter || other.CompareTag ("Daughter")) {
+					if (Level2Door.rescuedDaughter) {
 						StartCoroutine (OpenDoors ());
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
@@ -82,14 +82,10 @@ public class Level3Door : MonoBehaviour {
 				if (Level2Door.rescuedDaughter) {
 					// If rescued the daughter, the door will interact with the daughter mouse 
 					if (other.CompareTag ("Daughter")) {
+						print ("close");
 						StartCoroutine (CloseDoors ());
 					}
-				} else {
-					// If not rescued the daughter, the door will interact with the daughter mouse 
-					if (other.CompareTag ("Player")) {
-						StartCoroutine (CloseDoors ());
-					}
-				}
+				} 
 			}
 		}
 	}
