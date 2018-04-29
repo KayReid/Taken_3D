@@ -68,7 +68,7 @@ public class Level2Door : MonoBehaviour {
 						StartCoroutine (OpenDoors ());
 						FindObjectOfType<DialogueManager> ().StartDialogue (post_dialogue);
 						rescuedDaughter = true;
-						Destroy (doorObstacle);
+						doorObstacle.enabled = false;
 
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (pre_dialogue);

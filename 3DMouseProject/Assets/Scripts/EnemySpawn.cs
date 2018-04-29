@@ -23,18 +23,23 @@ public class EnemySpawn : MonoBehaviour {
 		while (true) {
 
 			if (transform.childCount < 1) {
-				yield return new WaitForSeconds(Random.Range(5,10));
+
 				prefabIndex = UnityEngine.Random.Range(0,2);
-				// Vector3 spawnPosition = NavMeshAgent.Warp(transform.position);
 				Vector3 spawnPosition = transform.position;
 				GameObject enemy = Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
+				StartCoroutine(returnTimeCoroutine ());
 				enemy.transform.parent = gameObject.transform;
 
 			}
-
+			yield return null;
 
 		}
 
+	}
+
+	IEnumerator returnTimeCoroutine() {
+		Debug.Log ("Wait to spawn");
+		yield return new WaitForSeconds (5f);
 	}
 
 }
