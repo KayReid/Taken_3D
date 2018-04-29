@@ -39,7 +39,6 @@ public class CameraController : MonoBehaviour {
 
     // Updates the camera position based on position of the target, which is the player. 
     void Update() {
-
         // borrowed 
         if (screenShakeTimer > 0)
         {
@@ -50,7 +49,6 @@ public class CameraController : MonoBehaviour {
             return;
         }
         // /borrowed
-
         transform.position = target.transform.position + offset;
     }
 

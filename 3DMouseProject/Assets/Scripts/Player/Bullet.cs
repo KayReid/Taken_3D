@@ -15,12 +15,8 @@ public class Bullet : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		transform.Translate (Vector3.forward * shitSpeed * Time.deltaTime);
-
-
 	}
-		
 
 	void OnCollisionEnter(Collision col)
 	{
@@ -33,13 +29,8 @@ public class Bullet : MonoBehaviour {
 		} else {
 			Destroy (gameObject);
 		}
-
-
-
 	}
-
-
-
+		
 	IEnumerator KillAfterSeconds (float seconds)
 	{
 		yield return new WaitForSeconds (seconds);

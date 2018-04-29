@@ -23,22 +23,17 @@ public class StoryTelling : MonoBehaviour {
 	void Update () {
 		print (PageNumber);
 		if (Input.anyKeyDown) {
-			print ("pressed");
 			PageTurn ();
 		}
-
 	}
 
 	void PageTurn() {
 		PageNumber++;
 		if (PageNumber < page.Length) {
 			StartCoroutine (TypingSentence (page [PageNumber]));
-			// view.text = page [PageNumber];
-
 		} else {
 			SceneManager.LoadScene(levelToLoad);
 		}
-
 	}
 
 	IEnumerator TypingSentence (string sentence){

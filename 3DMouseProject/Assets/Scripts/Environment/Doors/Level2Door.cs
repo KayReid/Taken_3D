@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+// Door that will be opened when find a key
+public class Level2Door : MonoBehaviour {
 
-// Door that will be opened when rescue a daughter
-
-public class Level3Door : MonoBehaviour {
-
-
+	// public static Level2Door instance; 
 	private DoorStatus status = DoorStatus.Closed;
 
-	public Dialogue dialogue;
+	public static bool rescuedDaughter;
+	public static bool foundDaughter;
+	public Dialogue preDialogue;
+	public Dialogue postDialogue;
 
 	[SerializeField]
 	private Transform halfDoorLeftTransform;	//	Left panel of the sliding door
@@ -51,44 +52,32 @@ public class Level3Door : MonoBehaviour {
 
 		audioSource = GetComponent<AudioSource>();
 
+		rescuedDaughter = false;
+		foundDaughter = false;
+
 		doorObstacle = GetComponent<NavMeshObstacle>();
 	}
-
-	// Update is called once per frame
-	void Update () {
-
-
-	}
-
-	void OnTriggerEnter(Collider other) {
 		
+	void OnTriggerEnter(Collider other) {
+
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Level2Door.rescuedDaughter) {
+					if (Key.keyActivated) {
 						StartCoroutine (OpenDoors ());
+						FindObjectOfType<DialogueManager> ().StartDialogue (postDialogue);
+						rescuedDaughter = true;
+						doorObstacle.enabled = false;
+
 					} else {
-						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
+						FindObjectOfType<DialogueManager> ().StartDialogue (preDialogue);
+						foundDaughter = true;
 					}
 				}
 			}
 		}
 	}
 
-	void OnTriggerExit(Collider other) {
-
-		if (status != DoorStatus.Animating) {
-			if (status == DoorStatus.Open) {
-				if (Level2Door.rescuedDaughter) {
-					// If rescued the daughter, the door will interact with the daughter mouse 
-					if (other.CompareTag ("Daughter")) {
-						print ("close");
-						StartCoroutine (CloseDoors ());
-					}
-				} 
-			}
-		}
-	}
 
 	IEnumerator OpenDoors () {
 
@@ -111,33 +100,9 @@ public class Level3Door : MonoBehaviour {
 
 
 		status = DoorStatus.Open;
-		doorObstacle.enabled = false;
 
 	}
-
-	IEnumerator CloseDoors () {
-
-		if (doorClosingSoundClip != null) {
-			audioSource.PlayOneShot(doorClosingSoundClip, 0.7F);
-		}
-
-		status = DoorStatus.Animating;
-
-		float t = 0f;
-
-		while (t < 1f) {
-			t += Time.deltaTime * speed;
-
-			halfDoorLeftTransform.localPosition = Vector3.Slerp(leftDoorOpenPosition, leftDoorClosedPosition, t);
-			halfDoorRightTransform.localPosition = Vector3.Slerp(rightDoorOpenPosition, rightDoorClosedPosition, t);
-
-			yield return null;
-		}
-
-		status = DoorStatus.Closed;
-		doorObstacle.enabled = true;
-
-	}
+		
 
 }
 

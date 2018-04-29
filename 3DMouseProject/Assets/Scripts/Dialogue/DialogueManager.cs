@@ -6,43 +6,36 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour {
 
-	// public Text nameText;
 	public Text dialogueText;
 	private Queue<string> sentences;
 
 	public Animator anim;
 
 	private PlayerController pc;
+	public static bool dialogueEnded;
 
 	// Use this for initialization
 	void Start () {
-
 		sentences = new Queue<string>();
-
 		pc = FindObjectOfType<PlayerController> ();
-
+		dialogueEnded = false;
 	}
 	
 
 	public void StartDialogue(Dialogue dialogue){
-
 		pc.canMove = false;
 		pc.canShoot = false;
 		anim.SetBool ("IsOpen", true);
-
 		sentences.Clear ();
+
 		foreach (string sentence in dialogue.sentences) {
-		
 			sentences.Enqueue (sentence);
-
 		}
-
 		DisplayNextSentence ();
 	}
 
 
 	public void DisplayNextSentence (){
-		Debug.Log ("Continue pressed"); 
 		if (sentences.Count == 0) {
 			EndDialogue();
 			return;
@@ -51,18 +44,19 @@ public class DialogueManager : MonoBehaviour {
 		string sentence = sentences.Dequeue ();
 		StopAllCoroutines();
 		StartCoroutine (TypingSentence (sentence));
-
 	}
 
 	void EndDialogue(){
 		anim.SetBool ("IsOpen", false);
 		pc.canMove = true;
 		pc.canShoot = true;
+		dialogueEnded = true;
 	}
 
 
 	IEnumerator TypingSentence (string sentence){
 		dialogueText.text = "";
+
 		foreach (char letter in sentence.ToCharArray()) {
 			dialogueText.text += letter;
 			yield return null;

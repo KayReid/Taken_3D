@@ -22,10 +22,6 @@ public class PlayerController : MonoBehaviour {
 	public Camera cam;
 	public float mouseSensitivity;
 
-	[Header ("Jumping")]
-	public float jumpForce = 5f;
-	public Collider coll;
-
 	[Header ("Shooting")]
 	public GameObject poopPrefab; // Prefab to be instantiated when pooping
 	public float rateOfFire = 2; // How fast is the player shooting
@@ -34,7 +30,6 @@ public class PlayerController : MonoBehaviour {
 	public float range = 50f; // How far the shooting can go
 	public Transform firePoint;
 	public bool canShoot;
-	private LineRenderer laserline;
 
 	[Header ("Others")]
 	public float speed = 2f;
@@ -45,16 +40,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-		laserline = GetComponent<LineRenderer> ();
 		rb = GetComponent<Rigidbody> ();
-		coll = GetComponent<Collider> ();
 		mouseAnimation = GetComponent<Animator> ();
 		cam = Camera.main;
 		inputFire = false;
 		canMove = true; 
 		canShoot = true;
-
 	}
 
 	// Movement and Jumping
@@ -62,12 +53,6 @@ public class PlayerController : MonoBehaviour {
 		// Move left, right, back, and forth
 		if (canMove) {
 			rb.velocity = new Vector3 (moveLR * speed, rb.velocity.y, moveFB * speed);
-
-			if (inputJump && Grounded ()) {
-				// rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
-				rb.AddForce (Vector3.up * Mathf.Sqrt (jumpForce * -0.5f * Physics.gravity.y), ForceMode.VelocityChange);
-
-			}
 			if (moveLR != 0 || moveFB != 0) {
 				mouseAnimation.SetBool ("isWalking", true);
 			} else {
@@ -81,26 +66,13 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (canShoot) {
 			if (inputFire && (lastTimeFired + 1 / rateOfFire) < Time.time) {
-				// print ("shoot");
 				lastTimeFired = Time.time;
-				// transform.eulerAngles = new Vector3(0,180,0);
-				// StartCoroutine (ShotEffect ());
 				Shoot ();
 			}
-			/*
-			if (inputFire) {
-				Shoot ();
-			}
-			*/
 		}
 		Rotate ();
 	}
 		
-	/// Check whether the player is grounded
-	bool Grounded () {
-		return Physics.Raycast (transform.position, Vector3.down, coll.bounds.extents.y + 0.1f);
-	}
-
 	// Rotate the player to make it face the mouse pointer
 	void Rotate () {
 		RaycastHit hit;
@@ -110,73 +82,16 @@ public class PlayerController : MonoBehaviour {
 		}
 		target = mousePos - transform.position;
 		Quaternion newRotation = Quaternion.LookRotation (target);
-
 		newRotation.x = 0;
 		newRotation.z = 0;
-
 		transform.rotation = Quaternion.Lerp (transform.rotation, newRotation, mouseSensitivity * Time.deltaTime);
-
-	
 	}
 
-	// Shoot the poop
+	// Shoot the bullet
 	void Shoot() {
-		/*
-		print ("shoot");
-		RaycastHit hit;
-		if (Physics.Raycast (Player.instance.transform.position, target, out hit, range)) {
-			EnemyFollow enemy = hit.transform.GetComponent<EnemyFollow> ();
-			if (enemy != null) { // Only do this when found the component. 
-				print ("hit");
-				Debug.Log (hit.transform.name);
-				enemy.Hurt ();
-			}
-
-		}
-
-
-
-		print ("shoot");
-		RaycastHit hit;
-		laserline.SetPosition (0, firePoint.position);
-
-		if (Physics.Raycast (Player.instance.transform.position, target, out hit, range)) {
-
-			laserline.SetPosition (1, hit.point);
-
-			EnemyFollow enemy = hit.transform.GetComponent<EnemyFollow> ();
-			if (enemy != null) { // Only do this when found the component. 
-				print ("hit");
-				Debug.Log (hit.transform.name);
-				enemy.Hurt ();
-			}
-
-		} 
-		*/
-
-		// transform.Rotate(Vector3.up * Time.deltaTime);
-		print ("shoot");
-
-		// mouseAnimation.SetTrigger ("attack");
-
-
-		// Instantiate the poop
+		// Instantiate the bullet
 		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
 		bullet.transform.rotation = transform.rotation;
-
-		//Rigidbody bulletrb = bullet.GetComponent<Rigidbody> ();
-
-		//bulletrb.velocity = BallisticVel(mousePos); 
-		// pass the angle and the target transform 
-
-	}
-		
-
-
-	IEnumerator ShotEffect(){
-		laserline.enabled = true;
-		yield return new WaitForSeconds (0.07f);
-		laserline.enabled = false;
 	}
 
 }

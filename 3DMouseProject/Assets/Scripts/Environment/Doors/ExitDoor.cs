@@ -11,21 +11,24 @@ public class ExitDoor : MonoBehaviour {
 	private DoorStatus status = DoorStatus.Closed;
 	public GameObject cannonPrefab;
 
-	public Dialogue dialogue;
+	public Dialogue preDialogue;
+	public Dialogue postDialogue;
 
 	[SerializeField]
 	private AudioClip cannonShootingSoundClip;
 
 
 	void OnTriggerEnter(Collider other) {
-
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
 					if (Cannon.cannonCounter == 5) {
-						StartCoroutine(spawnCanon());
+						FindObjectOfType<DialogueManager> ().StartDialogue (postDialogue);
+						if (DialogueManager.dialogueEnded) {
+							StartCoroutine(spawnCanon());
+						}
 					} else {
-						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
+						FindObjectOfType<DialogueManager> ().StartDialogue (preDialogue);
 					}
 				}
 			}

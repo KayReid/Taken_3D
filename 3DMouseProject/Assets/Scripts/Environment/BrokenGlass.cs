@@ -9,7 +9,6 @@ public class BrokenGlass : MonoBehaviour {
         if (other.gameObject.tag == "Player" && Player.instance.invulnerable != true)
         {
         	Player.instance.invulnerable = true;
-            print("Hit broken glass");
             Player.instance.Injure();
         }
     }
