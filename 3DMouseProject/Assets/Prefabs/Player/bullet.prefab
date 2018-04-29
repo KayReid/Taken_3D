@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 2
-  shitSpeed: 10
+  shitSpeed: 15
   shootSound: {fileID: 8300000, guid: 89d5e08495c5841cc836498368931fcb, type: 3}
 --- !u!135 &135289818140653730
 SphereCollider:

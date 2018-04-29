@@ -12,15 +12,12 @@ public class DialogueManager : MonoBehaviour {
 	public Animator anim;
 
 	private PlayerController pc;
-	public static bool dialogueEnded;
 
 	// Use this for initialization
 	void Start () {
 		sentences = new Queue<string>();
 		pc = FindObjectOfType<PlayerController> ();
-		dialogueEnded = false;
 	}
-	
 
 	public void StartDialogue(Dialogue dialogue){
 		pc.canMove = false;
@@ -50,7 +47,6 @@ public class DialogueManager : MonoBehaviour {
 		anim.SetBool ("IsOpen", false);
 		pc.canMove = true;
 		pc.canShoot = true;
-		dialogueEnded = true;
 	}
 
 

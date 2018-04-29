@@ -78,12 +78,9 @@ public class Level1Door : MonoBehaviour {
 
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Open) {
-				print ("yo close it");
 				if (Level2Door.rescuedDaughter) {
-					print ("got it");
 					// If rescued the daughter, the door will interact with the daughter mouse 
 					if (other.CompareTag ("Daughter")) {
-						print ("close");
 						StartCoroutine (CloseDoors ());
 					}
 				} else {
