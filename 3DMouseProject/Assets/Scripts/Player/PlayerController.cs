@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour {
 	[HideInInspector] public float moveLR; // move left and right
 	[HideInInspector] public float moveFB; // move back and forth
 	[HideInInspector] public bool inputFire; // move back and forth
-	[HideInInspector] public bool inputJump; // move back and forth
 	[HideInInspector] public bool canMove; // Check whether the player can move
 
 	[Header ("Rotation of the player")]
@@ -23,11 +22,9 @@ public class PlayerController : MonoBehaviour {
 	public float mouseSensitivity;
 
 	[Header ("Shooting")]
-	public GameObject poopPrefab; // Prefab to be instantiated when pooping
+	public GameObject bulletPrefab; // Prefab to be instantiated when pooping
 	public float rateOfFire = 2; // How fast is the player shooting
 	private float lastTimeFired = 0; // Last time when the player pooped
-	public float Shitspeed = 13; // How fast is the poop moving towards the mouse pointer
-	public float range = 50f; // How far the shooting can go
 	public Transform firePoint;
 	public bool canShoot;
 
@@ -90,7 +87,7 @@ public class PlayerController : MonoBehaviour {
 	// Shoot the bullet
 	void Shoot() {
 		// Instantiate the bullet
-		GameObject bullet = Instantiate(poopPrefab, firePoint.position, firePoint.rotation) as GameObject;
+		GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation) as GameObject;
 		bullet.transform.rotation = transform.rotation;
 	}
 

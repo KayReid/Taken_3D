@@ -29663,6 +29663,12 @@ Prefab:
       value: 
       objectReference: {fileID: 13400000, guid: b5334ef0ac6f44037967508b0f16da26,
         type: 2}
+    - target: {fileID: 114663700627447756, guid: 99af032b9e427473fb787d2146393c38,
+        type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1958710893512628, guid: e3c28415105384c798fb1ad0dcbd926a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 99af032b9e427473fb787d2146393c38, type: 2}
   m_IsPrefabParent: 0
