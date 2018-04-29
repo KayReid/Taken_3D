@@ -5340,7 +5340,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.92, y: 0, z: 5.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 513841201}
   m_Father: {fileID: 403306954}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6327,6 +6328,77 @@ Transform:
   m_PrefabParentObject: {fileID: 4478538350153572, guid: ecee275fda2c93e4c8bb640d2827b71e,
     type: 2}
   m_PrefabInternal: {fileID: 158339462}
+--- !u!1 &385109226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 385109227}
+  - component: {fileID: 385109229}
+  - component: {fileID: 385109228}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385109227
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385109226}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.7, y: 0, z: 2.18}
+  m_LocalScale: {x: 0.7692308, y: 0.0076923077, z: 0.7692308}
+  m_Children: []
+  m_Father: {fileID: 1878976059}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &385109228
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385109226}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &385109229
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385109226}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &385485113
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,8 +7050,8 @@ Transform:
   - {fileID: 1878976059}
   - {fileID: 336298310}
   - {fileID: 1104193066}
-  - {fileID: 1524745844}
   - {fileID: 993843569}
+  - {fileID: 1524745844}
   - {fileID: 1763719275}
   m_Father: {fileID: 480858372}
   m_RootOrder: 2
@@ -8416,57 +8488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pre_dialogue:
-    sentences:
-    - 'Maggie
-
-
-      Papa, how did you escape from your room?!'
-    - 'Liam
-
-
-      My room was somehow unlocked... Are you okay?! How can I get you out of here???'
-    - 'Maggie
-
-
-      I saw some humans across this room earlier, maybe there is a key to unlock this
-      door...'
-    - 'Liam
-
-
-      I will go find the key! Stay right here!'
-    - 'Maggie
-
-
-      Alright! Also, if you get hurt, there are some boxes that contain cheese for
-      you to recover'
+    sentences: []
   post_dialogue:
-    sentences:
-    - 'Maggie
-
-
-      Wow Papa! You did it! '
-    - 'Liam
-
-
-      Let''s get out here!'
-    - 'Maggie
-
-
-      Wait Papa, the walls in this lab are immune to your bullets. However,I overheard
-      the humans talking about developing a nuclear cannon that can destroy anything!'
-    - 'Liam
-
-
-      How do we find this cannon?'
-    - 'Maggie
-
-
-      There are 5 canon parts that we need to collect. Once we collect all of them,
-      we can assemble the cannon to blast down the Main Exit.'
-    - 'Liam
-
-
-      Let''s break outta here!'
+    sentences: []
   halfDoorLeftTransform: {fileID: 487461855}
   halfDoorRightTransform: {fileID: 487461856}
   slideDistance: 1.3
@@ -8761,6 +8785,77 @@ MonoBehaviour:
     type: 3}
   doorClosingSoundClip: {fileID: 8300000, guid: 4547fb4d1627d4ce6acc55af375f84f4,
     type: 3}
+--- !u!1 &513841200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 513841201}
+  - component: {fileID: 513841203}
+  - component: {fileID: 513841202}
+  m_Layer: 0
+  m_Name: Cylinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &513841201
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513841200}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.014, y: 0, z: -2.481}
+  m_LocalScale: {x: 0.7692308, y: 0.0076923077, z: 0.7692308}
+  m_Children: []
+  m_Father: {fileID: 336298310}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &513841202
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513841200}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &513841203
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513841200}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &523598927
 Prefab:
   m_ObjectHideFlags: 0
@@ -15023,7 +15118,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401306, guid: 0cce979f355c54a7d9ea3bac999dc030, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.5
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 401306, guid: 0cce979f355c54a7d9ea3bac999dc030, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15330,7 +15425,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 3.5000005}
   m_Children: []
   m_Father: {fileID: 403306954}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &993843570
 MeshRenderer:
@@ -15397,8 +15492,8 @@ OffMeshLink:
   serializedVersion: 3
   m_AreaIndex: 0
   m_AgentTypeID: 0
-  m_Start: {fileID: 1878976059}
-  m_End: {fileID: 336298310}
+  m_Start: {fileID: 385109227}
+  m_End: {fileID: 513841201}
   m_CostOverride: -1
   m_BiDirectional: 1
   m_Activated: 1
@@ -23232,7 +23327,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587518509292966, guid: 95e15676e120f4bb1b35af5bd2b91270, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114409949165894262, guid: 95e15676e120f4bb1b35af5bd2b91270,
         type: 2}
@@ -28730,7 +28825,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.4182067, y: 0, z: 2.6832538}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 385109227}
   m_Father: {fileID: 403306954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
