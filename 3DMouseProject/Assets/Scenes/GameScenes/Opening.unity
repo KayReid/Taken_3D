@@ -291,7 +291,7 @@ MonoBehaviour:
   - '.....'
   - WHERE AM I? IS  THIS A LAB??
   - WHERE IS MY DAUGHTER?!
-  levelToLoad: NPCtest Scene
+  levelToLoad: Game
 --- !u!114 &1434518897
 MonoBehaviour:
   m_ObjectHideFlags: 0
