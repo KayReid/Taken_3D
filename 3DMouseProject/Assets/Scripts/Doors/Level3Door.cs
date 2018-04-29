@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 
 // Door that will be opened when rescue a daughter
@@ -30,6 +30,7 @@ public class Level3Door : MonoBehaviour {
 	[SerializeField]
 	private float speed = 1f;					//	Speed for opening and closing the door
 
+	public NavMeshObstacle doorObstacle;
 
 	//	Sound Fx
 	[SerializeField]
@@ -49,6 +50,8 @@ public class Level3Door : MonoBehaviour {
 		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
 
 		audioSource = GetComponent<AudioSource>();
+
+		doorObstacle = GetComponent<NavMeshObstacle>();
 	}
 
 	// Update is called once per frame
@@ -62,7 +65,7 @@ public class Level3Door : MonoBehaviour {
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
-					if (Level2Door.rescuedDaughter) {
+					if (Level2Door.rescuedDaughter || other.CompareTag ("Daughter")) {
 						StartCoroutine (OpenDoors ());
 					} else {
 						FindObjectOfType<DialogueManager> ().StartDialogue (dialogue);
@@ -76,8 +79,16 @@ public class Level3Door : MonoBehaviour {
 
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Open) {
-				if (other.CompareTag ("Player")) {
-					StartCoroutine (CloseDoors ());
+				if (Level2Door.rescuedDaughter) {
+					// If rescued the daughter, the door will interact with the daughter mouse 
+					if (other.CompareTag ("Daughter")) {
+						StartCoroutine (CloseDoors ());
+					}
+				} else {
+					// If not rescued the daughter, the door will interact with the daughter mouse 
+					if (other.CompareTag ("Player")) {
+						StartCoroutine (CloseDoors ());
+					}
 				}
 			}
 		}
@@ -104,6 +115,7 @@ public class Level3Door : MonoBehaviour {
 
 
 		status = DoorStatus.Open;
+		doorObstacle.enabled = false;
 
 	}
 
@@ -127,6 +139,7 @@ public class Level3Door : MonoBehaviour {
 		}
 
 		status = DoorStatus.Closed;
+		doorObstacle.enabled = true;
 
 	}
 

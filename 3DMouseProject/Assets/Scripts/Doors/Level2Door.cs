@@ -44,7 +44,6 @@ public class Level2Door : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		// instance = this;
 		leftDoorClosedPosition	= new Vector3 (0f, 0f, 0f);
 		leftDoorOpenPosition	= new Vector3 (0f, 0f, slideDistance);
 
@@ -53,8 +52,8 @@ public class Level2Door : MonoBehaviour {
 
 		audioSource = GetComponent<AudioSource>();
 
-		rescuedDaughter = false; //change
-		foundDaughter = false; // change
+		rescuedDaughter = false;
+		foundDaughter = false;
 
 		doorObstacle = GetComponent<NavMeshObstacle>();
 	}

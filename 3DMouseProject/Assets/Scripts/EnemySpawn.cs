@@ -11,35 +11,30 @@ public class EnemySpawn : MonoBehaviour {
 	List<GameObject> enemyList = new List<GameObject>();
 	int prefabIndex;
 
+	public float Timer = 7f;
+
 	// Use this for initialization
 	void Start () {
 		enemyList.Add(catPrefab);
 		enemyList.Add(dogPrefab);
-		StartCoroutine (SpawnEnemyCoroutine ());
 	}
 
-	IEnumerator SpawnEnemyCoroutine () {
-		// forever
-		while (true) {
+	void Update(){
+		Spawn ();
+	}
 
-			if (transform.childCount < 1) {
-
-				prefabIndex = UnityEngine.Random.Range(0,2);
+	void Spawn () {
+		if (transform.childCount < 1) {
+			Timer -= Time.deltaTime;
+			if (Timer <= 0) {
+				prefabIndex = UnityEngine.Random.Range (0, 2);
 				Vector3 spawnPosition = transform.position;
-				GameObject enemy = Instantiate(enemyList[prefabIndex], spawnPosition, Quaternion.identity);
-				StartCoroutine(returnTimeCoroutine ());
+				GameObject enemy = Instantiate (enemyList [prefabIndex], spawnPosition, Quaternion.identity);
 				enemy.transform.parent = gameObject.transform;
-
+				Timer = 7f;
 			}
-			yield return null;
-
 		}
-
 	}
-
-	IEnumerator returnTimeCoroutine() {
-		Debug.Log ("Wait to spawn");
-		yield return new WaitForSeconds (5f);
-	}
+		
 
 }

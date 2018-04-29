@@ -1,8 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using UnityEngine.AI;
 
 //	Door status
 public enum DoorStatus {
@@ -41,6 +40,7 @@ public class Door : MonoBehaviour {
 
 	private AudioSource audioSource;
 
+	public NavMeshObstacle doorObstacle;
 
 	// Use this for initialization
 	void Start () {
@@ -51,6 +51,8 @@ public class Door : MonoBehaviour {
 		rightDoorOpenPosition	= new Vector3 (0f, 0f, -slideDistance);
 
 		audioSource = GetComponent<AudioSource>();
+
+		doorObstacle = GetComponent<NavMeshObstacle>();
 	}
 
 	// Update is called once per frame
@@ -65,6 +67,7 @@ public class Door : MonoBehaviour {
 			if (status == DoorStatus.Closed) {
 				if (other.CompareTag ("Player")) {
 					StartCoroutine (OpenDoors ());
+					doorObstacle.enabled = false;
 				}
 			}
 		}
@@ -74,8 +77,9 @@ public class Door : MonoBehaviour {
 
 		if (status != DoorStatus.Animating) {
 			if (status == DoorStatus.Open) {
-				if (other.CompareTag ("Player")) {
+				if (other.CompareTag ("Daughter")) {
 					StartCoroutine (CloseDoors ());
+					doorObstacle.enabled = true;
 				}
 			}
 		}
@@ -125,6 +129,7 @@ public class Door : MonoBehaviour {
 		}
 
 		status = DoorStatus.Closed;
+
 
 	}
 
