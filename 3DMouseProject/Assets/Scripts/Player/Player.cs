@@ -22,6 +22,7 @@ public class Player : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+		Time.timeScale = 1f;
 		instance = this;
 		Key.keyActivated = false;
 		Cannon.cannonCounter = 0;
