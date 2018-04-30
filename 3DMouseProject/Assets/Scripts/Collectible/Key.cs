@@ -11,6 +11,12 @@ public class Key : MonoBehaviour {
     /// If touched by player, will be destroyed on impact and "added" to UI. Used to free wife from her cage.
     /// </summary>
     /// <param name="collision"></param>
+	/// 
+
+	void Start () {
+		keyActivated = false;
+	}
+
     void OnCollisionEnter(Collision collision) {
         if (collision.gameObject.tag == "Player") {
             UICollectible.instance.UpdateInventory(this.gameObject); // Update UI

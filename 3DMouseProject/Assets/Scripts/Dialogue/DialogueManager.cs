@@ -23,7 +23,6 @@ public class DialogueManager : MonoBehaviour {
 		pc.canMove = false;
 		pc.canShoot = false;
 		anim.SetBool ("IsOpen", true);
-		sentences.Clear ();
 
 		foreach (string sentence in dialogue.sentences) {
 			sentences.Enqueue (sentence);

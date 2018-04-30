@@ -23,6 +23,8 @@ public class Player : MonoBehaviour {
     // Use this for initialization
     void Awake () {
 		instance = this;
+		Key.keyActivated = false;
+		Cannon.cannonCounter = 0;
 	}
 
 	/// <summary>
